@@ -1,5 +1,9 @@
 # Ignore credential files
-mysql_creds.json
 *.env
 .env
-secrets/
+secrets.json
+data/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+

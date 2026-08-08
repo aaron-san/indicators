@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>load_data</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>index</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7795,15 +7795,16 @@ a.anchor-link {
 </style>
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-<main><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f5b8f799">
+<main><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=a31a3912">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># HideCell</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span>
 
 <span class="n">HTML</span><span class="p">(</span>
 <span class="w">    </span><span class="sd">"""</span>
@@ -7837,7 +7838,7 @@ a.anchor-link {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
 <link href="custom.css" rel="stylesheet"/>
@@ -7859,783 +7860,2876 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=24a3e511">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Load-industries">Load <code>industries</code><a class="anchor-link" href="#Load-industries">¶</a></h2>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=ca41e170">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=c3e76ac4">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">DROP</span> <span class="n">TABLE</span> <span class="n">IF</span> <span class="n">EXISTS</span> <span class="n">industries</span><span class="p">;</span>
-
-<span class="o">--</span> <span class="n">Create</span> <span class="n">the</span> <span class="n">table</span> <span class="n">structure</span>
-<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">industries</span> <span class="p">(</span>
-    <span class="n">IndustryId</span> <span class="n">INT</span><span class="p">,</span>
-    <span class="n">Industry</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
-    <span class="n">Sector</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>
-<span class="p">);</span>
-
-<span class="o">--</span> <span class="n">Upload</span> <span class="n">the</span> <span class="n">csv</span> <span class="n">data</span>
-<span class="n">LOAD</span> <span class="n">DATA</span> <span class="n">LOCAL</span> <span class="n">INFILE</span> <span class="s1">'c:</span><span class="se">\\</span><span class="s1">Users</span><span class="se">\\</span><span class="s1">aaron</span><span class="se">\\</span><span class="s1">Desktop</span><span class="se">\\</span><span class="s1">Local Projects</span><span class="se">\\</span><span class="s1">Portfolio Projects</span><span class="se">\\</span><span class="s1">data</span><span class="se">\\</span><span class="s1">industries</span><span class="se">\\</span><span class="s1">industries.csv'</span>
-<span class="n">INTO</span> <span class="n">TABLE</span> <span class="n">industries</span>
-<span class="n">FIELDS</span> <span class="n">TERMINATED</span> <span class="n">BY</span> <span class="s1">';'</span>
-<span class="o">--</span> <span class="n">OPTIONALLY</span> <span class="n">ENCLOSED</span> <span class="n">BY</span> <span class="s1">'"'</span>
-<span class="n">LINES</span> <span class="n">TERMINATED</span> <span class="n">BY</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">'</span>
-<span class="n">IGNORE</span> <span class="mi">1</span> <span class="n">LINES</span><span class="p">;</span> <span class="o">--</span> <span class="n">skip</span> <span class="n">header</span> <span class="n">row</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># HideCell</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span><span class="p">,</span> <span class="n">Image</span><span class="p">,</span> <span class="n">display</span>
 
 
-<span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">industries</span> <span class="n">LIMIT</span> <span class="mi">10</span><span class="p">;</span>
+<span class="n">html_header</span> <span class="o">=</span> <span class="s2">"""</span>
+
+<span class="s2">&lt;header style="position: relative; overflow: hidden; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, Arial, sans-serif;"&gt;</span>
+<span class="s2">  &lt;div style="position: absolute; inset: 0; z-index: 0;" aria-hidden="true"&gt;</span>
+<span class="s2">    &lt;svg viewBox="0 0 1400 160" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:100%; display:block;"&gt;</span>
+<span class="s2">      &lt;g stroke="#0c447c" stroke-opacity="0.06" stroke-width="1"&gt;</span>
+<span class="s2">        &lt;line x1="0" y1="40" x2="1400" y2="40"/&gt;&lt;line x1="0" y1="80" x2="1400" y2="80"/&gt;&lt;line x1="0" y1="120" x2="1400" y2="120"/&gt;</span>
+<span class="s2">      &lt;/g&gt;</span>
+<span class="s2">      &lt;g fill="#7b828e" fill-opacity="0.28"&gt;</span>
+<span class="s2">        &lt;rect x="120" y="70" width="6" height="64"/&gt;&lt;rect x="160" y="55" width="6" height="88"/&gt;&lt;rect x="200" y="60" width="6" height="20"/&gt;&lt;rect x="240" y="40" width="6" height="55"/&gt;&lt;rect x="280" y="65" width="6" height="30"/&gt;&lt;rect x="320" y="45" width="6" height="40"/&gt;&lt;rect x="360" y="72" width="6" height="22"/&gt;&lt;rect x="880" y="58" width="6" height="42"/&gt;&lt;rect x="920" y="66" width="6" height="26"/&gt;&lt;rect x="960" y="42" width="6" height="50"/&gt;&lt;rect x="1000" y="60" width="6" height="32"/&gt;&lt;rect x="1040" y="50" width="6" height="44"/&gt;&lt;rect x="1080" y="68" width="6" height="24"/&gt;&lt;rect x="1120" y="55" width="6" height="38"/&gt;</span>
+<span class="s2">      &lt;/g&gt;</span>
+<span class="s2">      &lt;g stroke="#7b828e" stroke-opacity="0.28" stroke-width="1"&gt;</span>
+<span class="s2">        &lt;line x1="123" y1="60" x2="123" y2="110"/&gt;&lt;line x1="163" y1="48" x2="163" y2="108"/&gt;&lt;line x1="203" y1="52" x2="203" y2="86"/&gt;&lt;line x1="243" y1="32" x2="243" y2="100"/&gt;&lt;line x1="283" y1="58" x2="283" y2="100"/&gt;&lt;line x1="323" y1="38" x2="323" y2="90"/&gt;&lt;line x1="363" y1="65" x2="363" y2="100"/&gt;&lt;line x1="883" y1="50" x2="883" y2="104"/&gt;&lt;line x1="923" y1="58" x2="923" y2="96"/&gt;&lt;line x1="963" y1="34" x2="963" y2="96"/&gt;&lt;line x1="1003" y1="52" x2="1003" y2="96"/&gt;&lt;line x1="1043" y1="42" x2="1043" y2="98"/&gt;&lt;line x1="1083" y1="60" x2="1083" y2="96"/&gt;&lt;line x1="1123" y1="46" x2="1123" y2="97"/&gt;</span>
+<span class="s2">      &lt;/g&gt;</span>
+<span class="s2">      &lt;polyline fill="none" stroke="#5a6270" stroke-opacity="0.35" stroke-width="1.5"</span>
+<span class="s2">        points="0,120 60,110 140,95 220,100 300,75 380,85 460,60 540,68 620,45 700,58 780,38 860,50 940,30 1020,42 1100,25 1180,35 1260,18 1400,28"/&gt;</span>
+<span class="s2">    &lt;/svg&gt;</span>
+<span class="s2">  &lt;/div&gt;</span>
+<span class="s2">  &lt;div style="position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px;"&gt;</span>
+<span class="s2">    &lt;div style="display: flex; align-items: center; gap: 12px;"&gt;</span>
+<span class="s2">      &lt;svg width="30" height="60" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Database icon" style="flex-shrink:0;"&gt;</span>
+<span class="s2">        &lt;ellipse cx="15" cy="6" rx="11" ry="4" fill="none" stroke="#7b828e" stroke-width="1.4"/&gt;</span>
+<span class="s2">        &lt;path d="M4 6 V15 C4 17.2 9 19 15 19 C21 19 26 17.2 26 15 V6" fill="none" stroke="#7b828e" stroke-width="1.4"/&gt;</span>
+<span class="s2">        &lt;path d="M4 15 V24 C4 26.2 9 28 15 28 C21 28 26 26.2 26 24 V15" fill="none" stroke="#7b828e" stroke-width="1.4"/&gt;</span>
+<span class="s2">        &lt;ellipse cx="15" cy="15" rx="11" ry="4" fill="none" stroke="#7b828e" stroke-width="1.4"/&gt;</span>
+<span class="s2">      &lt;/svg&gt;</span>
+<span class="s2">    &lt;/div&gt;</span>
+<span class="s2">  &lt;/div&gt;</span>
+<span class="s2">&lt;/header&gt;</span>
+<span class="s2">"""</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">html_header</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5ec9c27b">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<header style="position: relative; overflow: hidden; background: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, Arial, sans-serif;">
+<div aria-hidden="true" style="position: absolute; inset: 0; z-index: 0;">
+<svg preserveaspectratio="none" style="width:100%; height:100%; display:block;" viewbox="0 0 1400 160" xmlns="http://www.w3.org/2000/svg">
+<g stroke="#0c447c" stroke-opacity="0.06" stroke-width="1">
+<line x1="0" x2="1400" y1="40" y2="40"></line><line x1="0" x2="1400" y1="80" y2="80"></line><line x1="0" x2="1400" y1="120" y2="120"></line>
+</g>
+<g fill="#7b828e" fill-opacity="0.28">
+<rect height="64" width="6" x="120" y="70"></rect><rect height="88" width="6" x="160" y="55"></rect><rect height="20" width="6" x="200" y="60"></rect><rect height="55" width="6" x="240" y="40"></rect><rect height="30" width="6" x="280" y="65"></rect><rect height="40" width="6" x="320" y="45"></rect><rect height="22" width="6" x="360" y="72"></rect><rect height="42" width="6" x="880" y="58"></rect><rect height="26" width="6" x="920" y="66"></rect><rect height="50" width="6" x="960" y="42"></rect><rect height="32" width="6" x="1000" y="60"></rect><rect height="44" width="6" x="1040" y="50"></rect><rect height="24" width="6" x="1080" y="68"></rect><rect height="38" width="6" x="1120" y="55"></rect>
+</g>
+<g stroke="#7b828e" stroke-opacity="0.28" stroke-width="1">
+<line x1="123" x2="123" y1="60" y2="110"></line><line x1="163" x2="163" y1="48" y2="108"></line><line x1="203" x2="203" y1="52" y2="86"></line><line x1="243" x2="243" y1="32" y2="100"></line><line x1="283" x2="283" y1="58" y2="100"></line><line x1="323" x2="323" y1="38" y2="90"></line><line x1="363" x2="363" y1="65" y2="100"></line><line x1="883" x2="883" y1="50" y2="104"></line><line x1="923" x2="923" y1="58" y2="96"></line><line x1="963" x2="963" y1="34" y2="96"></line><line x1="1003" x2="1003" y1="52" y2="96"></line><line x1="1043" x2="1043" y1="42" y2="98"></line><line x1="1083" x2="1083" y1="60" y2="96"></line><line x1="1123" x2="1123" y1="46" y2="97"></line>
+</g>
+<polyline fill="none" points="0,120 60,110 140,95 220,100 300,75 380,85 460,60 540,68 620,45 700,58 780,38 860,50 940,30 1020,42 1100,25 1180,35 1260,18 1400,28" stroke="#5a6270" stroke-opacity="0.35" stroke-width="1.5"></polyline>
+</svg>
 </div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Load-us_companies">Load <code>us_companies</code><a class="anchor-link" href="#Load-us_companies">¶</a></h2>
+<div style="position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
+<div style="display: flex; align-items: center; gap: 12px;">
+<svg aria-label="Database icon" height="60" role="img" style="flex-shrink:0;" viewbox="0 0 30 30" width="30" xmlns="http://www.w3.org/2000/svg">
+<ellipse cx="15" cy="6" fill="none" rx="11" ry="4" stroke="#7b828e" stroke-width="1.4"></ellipse>
+<path d="M4 6 V15 C4 17.2 9 19 15 19 C21 19 26 17.2 26 15 V6" fill="none" stroke="#7b828e" stroke-width="1.4"></path>
+<path d="M4 15 V24 C4 26.2 9 28 15 28 C21 28 26 26.2 26 24 V15" fill="none" stroke="#7b828e" stroke-width="1.4"></path>
+<ellipse cx="15" cy="15" fill="none" rx="11" ry="4" stroke="#7b828e" stroke-width="1.4"></ellipse>
+</svg>
+</div>
+</div>
+</header>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=4db90061">
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=6d43acbb">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">DROP</span> <span class="n">TABLE</span> <span class="n">IF</span> <span class="n">EXISTS</span> <span class="n">us_companies</span><span class="p">;</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># HideCell</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span><span class="p">,</span> <span class="n">Image</span><span class="p">,</span> <span class="n">display</span>
 
-<span class="o">--</span> <span class="n">Create</span> <span class="n">the</span> <span class="n">table</span> <span class="n">structure</span>
-<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">us_companies</span> <span class="p">(</span>
-    <span class="n">Ticker</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
-    <span class="n">SimFinId</span> <span class="n">INT</span><span class="p">,</span>
-    <span class="n">CompanyName</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
-    <span class="n">IndustryId</span> <span class="n">INT</span><span class="p">,</span>
-    <span class="n">ISIN</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
-    <span class="n">EndOfFinancialYearMonth</span> <span class="n">INT</span><span class="p">,</span>
-    <span class="n">NumberEmployees</span> <span class="n">INT</span><span class="p">,</span>
-    <span class="n">BusinessSummary</span> <span class="n">TEXT</span><span class="p">,</span>
-    <span class="n">Market</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
-    <span class="n">CIK</span> <span class="n">INT</span><span class="p">,</span>
-    <span class="n">MainCurrency</span> <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>
-<span class="p">);</span>
-
-<span class="o">--</span> <span class="n">Upload</span> <span class="n">the</span> <span class="n">csv</span> <span class="n">data</span>
-<span class="n">LOAD</span> <span class="n">DATA</span> <span class="n">LOCAL</span> <span class="n">INFILE</span> <span class="s1">'c:</span><span class="se">\\</span><span class="s1">Users</span><span class="se">\\</span><span class="s1">aaron</span><span class="se">\\</span><span class="s1">Desktop</span><span class="se">\\</span><span class="s1">Local Projects</span><span class="se">\\</span><span class="s1">Portfolio Projects</span><span class="se">\\</span><span class="s1">data</span><span class="se">\\</span><span class="s1">us-companies</span><span class="se">\\</span><span class="s1">us-companies.csv'</span>
-<span class="n">INTO</span> <span class="n">TABLE</span> <span class="n">us_companies</span>
-<span class="n">FIELDS</span> <span class="n">TERMINATED</span> <span class="n">BY</span> <span class="s1">';'</span>
-<span class="o">--</span> <span class="n">OPTIONALLY</span> <span class="n">ENCLOSED</span> <span class="n">BY</span> <span class="s1">'"'</span>
-<span class="n">LINES</span> <span class="n">TERMINATED</span> <span class="n">BY</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">'</span>
-<span class="n">IGNORE</span> <span class="mi">1</span> <span class="n">LINES</span><span class="p">;</span> <span class="o">--</span> <span class="n">skip</span> <span class="n">header</span> <span class="n">row</span>
-
-
-<span class="n">UPDATE</span> <span class="n">us_companies</span> <span class="n">SET</span> <span class="n">Ticker</span> <span class="o">=</span> <span class="n">NULL</span> <span class="n">WHERE</span> <span class="n">Ticker</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
-
-<span class="n">UPDATE</span> <span class="n">us_companies</span> <span class="n">SET</span> <span class="n">CompanyName</span> <span class="o">=</span> <span class="n">NULL</span> <span class="n">WHERE</span> <span class="n">CompanyName</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
-<span class="n">UPDATE</span> <span class="n">us_companies</span> <span class="n">SET</span> <span class="n">IndustryId</span> <span class="o">=</span> <span class="n">NULL</span> <span class="n">WHERE</span> <span class="n">IndustryId</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="n">UPDATE</span> <span class="n">us_companies</span> <span class="n">SET</span> <span class="n">ISIN</span> <span class="o">=</span> <span class="n">NULL</span> <span class="n">WHERE</span> <span class="n">ISIN</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
-<span class="n">UPDATE</span> <span class="n">us_companies</span> <span class="n">SET</span> <span class="n">EndOfFinancialYearMonth</span> <span class="o">=</span> <span class="n">NULL</span> <span class="n">WHERE</span> <span class="n">EndOfFinancialYearMonth</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="n">UPDATE</span> <span class="n">us_companies</span> <span class="n">SET</span> <span class="n">NumberEmployees</span> <span class="o">=</span> <span class="n">NULL</span> <span class="n">WHERE</span> <span class="n">NumberEmployees</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="n">UPDATE</span> <span class="n">us_companies</span> <span class="n">SET</span> <span class="n">BusinessSummary</span> <span class="o">=</span> <span class="n">NULL</span> <span class="n">WHERE</span> <span class="n">BusinessSummary</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span>
-<span class="n">UPDATE</span> <span class="n">us_companies</span> <span class="n">SET</span> <span class="n">CIK</span> <span class="o">=</span> <span class="n">NULL</span> <span class="n">WHERE</span> <span class="n">CIK</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-
-<span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">us_companies</span> <span class="n">ORDER</span> <span class="n">BY</span> <span class="n">Ticker</span> <span class="n">DESC</span> <span class="n">LIMIT</span> <span class="mi">10</span><span class="p">;</span>
+<span class="c1"># HideCell</span>
+<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="s2">"""</span>
+<span class="s2">&lt;script&gt;</span>
+<span class="s2">document.body.classList.add('preload');</span>
+<span class="s2">&lt;/script&gt;</span>
+<span class="s2">"""</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8bc07264">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<script>
+document.body.classList.add('preload');
+</script>
 </div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Load-us_income_quarterly">Load <code>us_income_quarterly</code><a class="anchor-link" href="#Load-us_income_quarterly">¶</a></h2>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=e1bafaf1">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e754bfb5">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">DROP</span> <span class="n">TABLE</span> <span class="n">IF</span> <span class="n">EXISTS</span> <span class="n">us_income_quarterly</span><span class="p">;</span>
-
-<span class="o">--</span> <span class="n">Create</span> <span class="n">the</span> <span class="n">table</span> <span class="n">structure</span>
-<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">us_income_quarterly</span> <span class="p">(</span>
-    <span class="n">Ticker</span>                              <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>     <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">SimFinId</span>                            <span class="n">INT</span>             <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">Currency</span>                            <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span>
-    <span class="n">FiscalYear</span>                          <span class="n">SMALLINT</span>        <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">FiscalPeriod</span>                        <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>      <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">ReportDate</span>                          <span class="n">DATE</span><span class="p">,</span>
-    <span class="n">PublishDate</span>                         <span class="n">DATE</span><span class="p">,</span>
-    <span class="n">RestatedDate</span>                        <span class="n">DATE</span><span class="p">,</span>
-    <span class="n">SharesBasic</span>                         <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">SharesDiluted</span>                       <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">Revenue</span>                             <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">CostOfRevenue</span>                       <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">GrossProfit</span>                         <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">OperatingExpenses</span>                   <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">SellingGeneralAdministrative</span>        <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">ResearchDevelopment</span>                 <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">DepreciationAmortization</span>            <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">OperatingIncomeLoss</span>                 <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">NonOperatingIncomeLoss</span>              <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">InterestExpenseNet</span>                  <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">PretaxIncomeLossAdj</span>                 <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">AbnormalGainsLosses</span>                 <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">PretaxIncomeLoss</span>                    <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">IncomeTaxExpenseBenefitNet</span>          <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">IncomeLossFromContinuingOperations</span>  <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">NetExtraordinaryGainsLosses</span>         <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">NetIncome</span>                           <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">NetIncomeCommon</span>                     <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">PRIMARY</span> <span class="n">KEY</span> <span class="p">(</span><span class="n">Ticker</span><span class="p">,</span> <span class="n">FiscalYear</span><span class="p">,</span> <span class="n">FiscalPeriod</span><span class="p">)</span>
-<span class="p">);</span>
-
-<span class="o">--</span> <span class="n">Upload</span> <span class="n">the</span> <span class="n">csv</span> <span class="n">data</span>
-<span class="n">LOAD</span> <span class="n">DATA</span> <span class="n">LOCAL</span> <span class="n">INFILE</span> <span class="s1">'c:</span><span class="se">\\</span><span class="s1">Users</span><span class="se">\\</span><span class="s1">aaron</span><span class="se">\\</span><span class="s1">Desktop</span><span class="se">\\</span><span class="s1">Local Projects</span><span class="se">\\</span><span class="s1">Portfolio Projects</span><span class="se">\\</span><span class="s1">data</span><span class="se">\\</span><span class="s1">us-income-quarterly</span><span class="se">\\</span><span class="s1">us-income-quarterly.csv'</span>
-<span class="n">INTO</span> <span class="n">TABLE</span> <span class="n">us_income_quarterly</span>
-<span class="n">FIELDS</span> <span class="n">TERMINATED</span> <span class="n">BY</span> <span class="s1">';'</span>
-<span class="o">--</span> <span class="n">OPTIONALLY</span> <span class="n">ENCLOSED</span> <span class="n">BY</span> <span class="s1">'"'</span>
-<span class="n">LINES</span> <span class="n">TERMINATED</span> <span class="n">BY</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">'</span>
-<span class="n">IGNORE</span> <span class="mi">1</span> <span class="n">LINES</span><span class="p">;</span> <span class="o">--</span> <span class="n">skip</span> <span class="n">header</span> <span class="n">row</span>
-
-<span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">us_income_quarterly</span> <span class="n">LIMIT</span> <span class="mi">10</span><span class="p">;</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># HideCell</span>
+<span class="n">HTML</span><span class="p">(</span><span class="s2">"""</span>
+<span class="s2">&lt;script&gt;</span>
+<span class="s2">window.addEventListener('load', () =&gt; {</span>
+<span class="s2">    document.body.classList.remove('preload');</span>
+<span class="s2">});</span>
+<span class="s2">&lt;/script&gt;</span>
+<span class="s2">"""</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f214a196">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<script>
+window.addEventListener('load', () => {
+    document.body.classList.remove('preload');
+});
+</script>
 </div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Load-us_income_annual">Load <code>us_income_annual</code><a class="anchor-link" href="#Load-us_income_annual">¶</a></h2>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=cd858f51">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d10b29db">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">DROP</span> <span class="n">TABLE</span> <span class="n">IF</span> <span class="n">EXISTS</span> <span class="n">us_income_annual</span><span class="p">;</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># HideCell</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">HTML</span><span class="p">,</span> <span class="n">Image</span><span class="p">,</span> <span class="n">display</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">date</span>
 
-<span class="o">--</span> <span class="n">Create</span> <span class="n">the</span> <span class="n">table</span> <span class="n">structure</span>
-<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">us_income_annual</span> <span class="p">(</span>
-    <span class="n">Ticker</span>                              <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>     <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">SimFinId</span>                            <span class="n">INT</span>             <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">Currency</span>                            <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span>
-    <span class="n">FiscalYear</span>                          <span class="n">SMALLINT</span>        <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">FiscalPeriod</span>                        <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>      <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">ReportDate</span>                          <span class="n">DATE</span><span class="p">,</span>
-    <span class="n">PublishDate</span>                         <span class="n">DATE</span><span class="p">,</span>
-    <span class="n">RestatedDate</span>                        <span class="n">DATE</span><span class="p">,</span>
-    <span class="n">SharesBasic</span>                         <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">SharesDiluted</span>                       <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">Revenue</span>                             <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">CostOfRevenue</span>                       <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">GrossProfit</span>                         <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">OperatingExpenses</span>                   <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">SellingGeneralAdministrative</span>        <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">ResearchDevelopment</span>                 <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">DepreciationAmortization</span>            <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">OperatingIncomeLoss</span>                 <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">NonOperatingIncomeLoss</span>              <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">InterestExpenseNet</span>                  <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">PretaxIncomeLossAdj</span>                 <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">AbnormalGainsLosses</span>                 <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">PretaxIncomeLoss</span>                    <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">IncomeTaxExpenseBenefitNet</span>          <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">IncomeLossFromContinuingOperations</span>  <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">NetExtraordinaryGainsLosses</span>         <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">NetIncome</span>                           <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">NetIncomeCommon</span>                     <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">PRIMARY</span> <span class="n">KEY</span> <span class="p">(</span><span class="n">Ticker</span><span class="p">,</span> <span class="n">FiscalYear</span><span class="p">,</span> <span class="n">FiscalPeriod</span><span class="p">)</span>
-<span class="p">);</span>
+<span class="n">today_str</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">"%B </span><span class="si">%d</span><span class="s2">, %Y"</span><span class="p">)</span>
 
-<span class="o">--</span> <span class="n">Upload</span> <span class="n">the</span> <span class="n">csv</span> <span class="n">data</span>
-<span class="n">LOAD</span> <span class="n">DATA</span> <span class="n">LOCAL</span> <span class="n">INFILE</span> <span class="s1">'c:</span><span class="se">\\</span><span class="s1">Users</span><span class="se">\\</span><span class="s1">aaron</span><span class="se">\\</span><span class="s1">Desktop</span><span class="se">\\</span><span class="s1">Local Projects</span><span class="se">\\</span><span class="s1">Portfolio Projects</span><span class="se">\\</span><span class="s1">data</span><span class="se">\\</span><span class="s1">us-income-annual</span><span class="se">\\</span><span class="s1">us-income-annual.csv'</span>
-<span class="n">INTO</span> <span class="n">TABLE</span> <span class="n">us_income_annual</span>
-<span class="n">FIELDS</span> <span class="n">TERMINATED</span> <span class="n">BY</span> <span class="s1">';'</span>
-<span class="o">--</span> <span class="n">OPTIONALLY</span> <span class="n">ENCLOSED</span> <span class="n">BY</span> <span class="s1">'"'</span>
-<span class="n">LINES</span> <span class="n">TERMINATED</span> <span class="n">BY</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">'</span>
-<span class="n">IGNORE</span> <span class="mi">1</span> <span class="n">LINES</span><span class="p">;</span> <span class="o">--</span> <span class="n">skip</span> <span class="n">header</span> <span class="n">row</span>
+<span class="n">html_coverpage_container</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"""</span>
+<span class="s2">&lt;div id="cover-page-container"&gt;</span>
+<span class="s2">    &lt;div id="title-container"&gt;</span>
+<span class="s2">        &lt;div id="title"&gt;Fundamentals Database with SimFin Data, MySQL, and Python&lt;/div&gt;</span>
+<span class="s2">        &lt;div id="meta-data-container"&gt;</span>
+<span class="s2">            &lt;div&gt;</span><span class="si">{</span><span class="n">today_str</span><span class="si">}</span><span class="s2">&lt;/div&gt;</span>
+<span class="s2">            &lt;div&gt;by Aaron Hardy&lt;/div&gt;</span>
+<span class="s2">        &lt;/div&gt;</span>
+<span class="s2">    &lt;/div&gt;</span>
+<span class="s2">    &lt;div id="title-bar"&gt;&lt;/div&gt;</span>
+<span class="s2">&lt;/div&gt;</span>
+<span class="s2">"""</span>
 
-<span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">us_income_annual</span> <span class="n">LIMIT</span> <span class="mi">10</span><span class="p">;</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="n">html_coverpage_container</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=301d7fd0">
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<div id="cover-page-container">
+<div id="title-container">
+<div id="title">Fundamentals Database with SimFin Data, MySQL, and Python</div>
+<div id="meta-data-container">
+<div>August 07, 2026</div>
+<div>by Aaron Hardy</div>
+</div>
+</div>
+<div id="title-bar"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fcf18fb9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Load-us_income_ttm">Load <code>us_income_ttm</code><a class="anchor-link" href="#Load-us_income_ttm">¶</a></h2>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=594b24f8">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">DROP</span> <span class="n">TABLE</span> <span class="n">IF</span> <span class="n">EXISTS</span> <span class="n">us_income_ttm</span><span class="p">;</span>
-
-<span class="o">--</span> <span class="n">Create</span> <span class="n">the</span> <span class="n">table</span> <span class="n">structure</span>
-<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">us_income_ttm</span> <span class="p">(</span>
-    <span class="n">Ticker</span>                              <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>     <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">SimFinId</span>                            <span class="n">INT</span>             <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">Currency</span>                            <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span>
-    <span class="n">FiscalYear</span>                          <span class="n">SMALLINT</span>        <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">FiscalPeriod</span>                        <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>      <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">ReportDate</span>                          <span class="n">DATE</span><span class="p">,</span>
-    <span class="n">PublishDate</span>                         <span class="n">DATE</span><span class="p">,</span>
-    <span class="n">RestatedDate</span>                        <span class="n">DATE</span><span class="p">,</span>
-    <span class="n">SharesBasic</span>                         <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">SharesDiluted</span>                       <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">Revenue</span>                             <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">CostOfRevenue</span>                       <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">GrossProfit</span>                         <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">OperatingExpenses</span>                   <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">SellingGeneralAdministrative</span>        <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">ResearchDevelopment</span>                 <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">DepreciationAmortization</span>            <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">OperatingIncomeLoss</span>                 <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">NonOperatingIncomeLoss</span>              <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">InterestExpenseNet</span>                  <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">PretaxIncomeLossAdj</span>                 <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">AbnormalGainsLosses</span>                 <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">PretaxIncomeLoss</span>                    <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">IncomeTaxExpenseBenefitNet</span>          <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">IncomeLossFromContinuingOperations</span>  <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">NetExtraordinaryGainsLosses</span>         <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">NetIncome</span>                           <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">NetIncomeCommon</span>                     <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">PRIMARY</span> <span class="n">KEY</span> <span class="p">(</span><span class="n">Ticker</span><span class="p">,</span> <span class="n">FiscalYear</span><span class="p">,</span> <span class="n">FiscalPeriod</span><span class="p">)</span>
-<span class="p">);</span>
-
-<span class="o">--</span> <span class="n">Upload</span> <span class="n">the</span> <span class="n">csv</span> <span class="n">data</span>
-<span class="n">LOAD</span> <span class="n">DATA</span> <span class="n">LOCAL</span> <span class="n">INFILE</span> <span class="s1">'c:</span><span class="se">\\</span><span class="s1">Users</span><span class="se">\\</span><span class="s1">aaron</span><span class="se">\\</span><span class="s1">Desktop</span><span class="se">\\</span><span class="s1">Local Projects</span><span class="se">\\</span><span class="s1">Portfolio Projects</span><span class="se">\\</span><span class="s1">data</span><span class="se">\\</span><span class="s1">us-income-ttm</span><span class="se">\\</span><span class="s1">us-income-ttm.csv'</span>
-<span class="n">INTO</span> <span class="n">TABLE</span> <span class="n">us_income_ttm</span>
-<span class="n">FIELDS</span> <span class="n">TERMINATED</span> <span class="n">BY</span> <span class="s1">';'</span>
-<span class="o">--</span> <span class="n">OPTIONALLY</span> <span class="n">ENCLOSED</span> <span class="n">BY</span> <span class="s1">'"'</span>
-<span class="n">LINES</span> <span class="n">TERMINATED</span> <span class="n">BY</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">'</span>
-<span class="n">IGNORE</span> <span class="mi">1</span> <span class="n">LINES</span><span class="p">;</span> <span class="o">--</span> <span class="n">skip</span> <span class="n">header</span> <span class="n">row</span>
-
-<span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">us_income_ttm</span> <span class="n">LIMIT</span> <span class="mi">10</span><span class="p">;</span>
-</pre></div>
+<h1 id="Summary">Summary<a class="anchor-link" href="#Summary">¶</a></h1><p>This project involved transforming raw fundamentals data into a structured set of financial ratios that can be used to reveal the underlying health, performance, and risk profile of a company. Raw accounting numbers alone rarely tell a clear story - ratios translate those numbers into standardized, comparable signals. By computing profitability, liquidity, solvency, efficiency, and valuation ratios, the project creates a foundation for deeper analytics, trend detection, and investment‑grade insights. The result is a unified dataset that supports downstream modeling, dashboards, and decision‑making.</p>
 </div>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f037b9c8">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=eb34f68a">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Load-us_balance_quarterly">Load <code>us_balance_quarterly</code><a class="anchor-link" href="#Load-us_balance_quarterly">¶</a></h2>
+<h1 id="The-Data">The Data<a class="anchor-link" href="#The-Data">¶</a></h1><p>The raw data was acquired from <a href="https://www.simfin.com/en/fundamental-data-download/">SimFin.com</a>, which requires a free account to download. MySQL was used as the database management system. The raw data existed as CSVs. Each CSV was loaded into a MySQL table. The code used to load each table can be found <a href="./sql/raw">here</a>.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=8cbbcfa1">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=45191bd2">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">DROP</span> <span class="n">TABLE</span> <span class="n">IF</span> <span class="n">EXISTS</span> <span class="n">us_balance_quarterly</span><span class="p">;</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">"../src"</span><span class="p">)</span>
 
-<span class="o">--</span> <span class="n">Create</span> <span class="n">the</span> <span class="n">table</span> <span class="n">structure</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">db</span><span class="w"> </span><span class="kn">import</span> <span class="n">run_sql_file</span><span class="p">,</span> <span class="n">run_sql</span>
 
-<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">us_balance_quarterly</span> <span class="p">(</span>
-    <span class="n">Ticker</span>                          <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>     <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">SimFinId</span>                        <span class="n">INT</span>             <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">Currency</span>                        <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span>
-    <span class="n">FiscalYear</span>                      <span class="n">SMALLINT</span>        <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">FiscalPeriod</span>                    <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>      <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">ReportDate</span>                      <span class="n">DATE</span><span class="p">,</span>
-    <span class="n">PublishDate</span>                     <span class="n">DATE</span><span class="p">,</span>
-    <span class="n">RestatedDate</span>                    <span class="n">DATE</span><span class="p">,</span>
-    <span class="n">SharesBasic</span>                     <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">SharesDiluted</span>                   <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">CashAndEquiv</span>                    <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">AccountsNotesReceivable</span>         <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">Inventories</span>                     <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">TotalCurrentAssets</span>              <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">PropertyPlantEquipmentNet</span>       <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">LongTermInvestmentsReceivables</span>  <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">OtherLongTermAssets</span>             <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">TotalNoncurrentAssets</span>           <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">TotalAssets</span>                     <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">PayablesAccruals</span>                <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">ShortTermDebt</span>                   <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">TotalCurrentLiabilities</span>         <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">LongTermDebt</span>                    <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">TotalNoncurrentLiabilities</span>      <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">TotalLiabilities</span>                <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">ShareCapitalAdditionalPaidIn</span>    <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">TreasuryStock</span>                   <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">RetainedEarnings</span>                <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">TotalEquity</span>                     <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">TotalLiabilitiesEquity</span>          <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">PRIMARY</span> <span class="n">KEY</span> <span class="p">(</span><span class="n">Ticker</span><span class="p">,</span> <span class="n">FiscalYear</span><span class="p">,</span> <span class="n">FiscalPeriod</span><span class="p">)</span>
-<span class="p">);</span>
-
-<span class="o">--</span> <span class="n">Upload</span> <span class="n">the</span> <span class="n">csv</span> <span class="n">data</span>
-<span class="n">LOAD</span> <span class="n">DATA</span> <span class="n">LOCAL</span> <span class="n">INFILE</span> <span class="s1">'c:</span><span class="se">\\</span><span class="s1">Users</span><span class="se">\\</span><span class="s1">aaron</span><span class="se">\\</span><span class="s1">Desktop</span><span class="se">\\</span><span class="s1">Local Projects</span><span class="se">\\</span><span class="s1">Portfolio Projects</span><span class="se">\\</span><span class="s1">data</span><span class="se">\\</span><span class="s1">us-balance-quarterly</span><span class="se">\\</span><span class="s1">us-balance-quarterly.csv'</span>
-<span class="n">INTO</span> <span class="n">TABLE</span> <span class="n">us_balance_quarterly</span>
-<span class="n">FIELDS</span> <span class="n">TERMINATED</span> <span class="n">BY</span> <span class="s1">';'</span>
-<span class="o">--</span> <span class="n">OPTIONALLY</span> <span class="n">ENCLOSED</span> <span class="n">BY</span> <span class="s1">'"'</span>
-<span class="n">LINES</span> <span class="n">TERMINATED</span> <span class="n">BY</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">'</span>
-<span class="n">IGNORE</span> <span class="mi">1</span> <span class="n">LINES</span><span class="p">;</span> <span class="o">--</span> <span class="n">skip</span> <span class="n">header</span> <span class="n">row</span>
-
-<span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">us_balance_quarterly</span> <span class="n">LIMIT</span> <span class="mi">10</span><span class="p">;</span>
+<span class="n">DATA_DIR</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">"../data"</span><span class="p">)</span>
+<span class="n">SQL_DIR</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">"../sql"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=c59c55b8">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a67f1d75">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Load CSV files into SQL database and apply select cleaning</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="n">create_raw_table_files</span> <span class="o">=</span> <span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">SQL_DIR</span> <span class="o">/</span> <span class="s2">"raw"</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">sql_file</span> <span class="ow">in</span> <span class="n">create_raw_table_files</span><span class="p">:</span>
+    <span class="n">run_sql_file</span><span class="p">(</span><span class="n">SQL_DIR</span> <span class="o">/</span> <span class="s2">"raw"</span> <span class="o">/</span> <span class="n">sql_file</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Created table: </span><span class="si">{</span><span class="n">sql_file</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">' - '</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'.sql'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Created table: industries
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Created table: us_balance_annual
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Created table: us_balance_quarterly
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Created table: us_balance_ttm
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Created table: us_cashflow_annual
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Created table: us_cashflow_quarterly
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Created table: us_cashflow_ttm
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Created table: us_companies
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Created table: us_income_annual
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Created table: us_income_quarterly
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Created table: us_income_ttm
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Created table: us_shareprices_daily
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3203add1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Load-us_balance_annual">Load <code>us_balance_annual</code><a class="anchor-link" href="#Load-us_balance_annual">¶</a></h2>
+<p>The raw data included common industry and sector classifications. The <code>IndustryId</code> field maps to the same field in the <code>us_companies</code> table.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=efdcdab6">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=ccadcb36">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">DROP</span> <span class="n">TABLE</span> <span class="n">IF</span> <span class="n">EXISTS</span> <span class="n">us_balance_annual</span><span class="p">;</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="s2">"""</span>
+<span class="s2">WITH cte AS (</span>
+<span class="s2">SELECT *,</span>
+<span class="s2">ROW_NUMBER() OVER (PARTITION BY Sector ORDER BY IndustryId) AS rn</span>
+<span class="s2">FROM industries</span>
+<span class="s2">)</span>
+<span class="s2">SELECT Sector, Industry, IndustryId</span>
+<span class="s2">FROM cte</span>
+<span class="s2">WHERE rn in (1, 2, 3)</span>
+<span class="s2">LIMIT 5;</span>
+<span class="s2">"""</span>
 
-<span class="o">--</span> <span class="n">Create</span> <span class="n">the</span> <span class="n">table</span> <span class="n">structure</span>
-
-<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">us_balance_annual</span> <span class="p">(</span>
-    <span class="n">Ticker</span>                          <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>     <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">SimFinId</span>                        <span class="n">INT</span>             <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">Currency</span>                        <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span>
-    <span class="n">FiscalYear</span>                      <span class="n">SMALLINT</span>        <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">FiscalPeriod</span>                    <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>      <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">ReportDate</span>                      <span class="n">DATE</span><span class="p">,</span>
-    <span class="n">PublishDate</span>                     <span class="n">DATE</span><span class="p">,</span>
-    <span class="n">RestatedDate</span>                    <span class="n">DATE</span><span class="p">,</span>
-    <span class="n">SharesBasic</span>                     <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">SharesDiluted</span>                   <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">CashAndEquiv</span>                    <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">AccountsNotesReceivable</span>         <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">Inventories</span>                     <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">TotalCurrentAssets</span>              <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">PropertyPlantEquipmentNet</span>       <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">LongTermInvestmentsReceivables</span>  <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">OtherLongTermAssets</span>             <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">TotalNoncurrentAssets</span>           <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">TotalAssets</span>                     <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">PayablesAccruals</span>                <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">ShortTermDebt</span>                   <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">TotalCurrentLiabilities</span>         <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">LongTermDebt</span>                    <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">TotalNoncurrentLiabilities</span>      <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">TotalLiabilities</span>                <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">ShareCapitalAdditionalPaidIn</span>    <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">TreasuryStock</span>                   <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">RetainedEarnings</span>                <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">TotalEquity</span>                     <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">TotalLiabilitiesEquity</span>          <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">PRIMARY</span> <span class="n">KEY</span> <span class="p">(</span><span class="n">Ticker</span><span class="p">,</span> <span class="n">FiscalYear</span><span class="p">,</span> <span class="n">FiscalPeriod</span><span class="p">)</span>
-<span class="p">);</span>
-
-<span class="o">--</span> <span class="n">Upload</span> <span class="n">the</span> <span class="n">csv</span> <span class="n">data</span>
-<span class="n">LOAD</span> <span class="n">DATA</span> <span class="n">LOCAL</span> <span class="n">INFILE</span> <span class="s1">'c:</span><span class="se">\\</span><span class="s1">Users</span><span class="se">\\</span><span class="s1">aaron</span><span class="se">\\</span><span class="s1">Desktop</span><span class="se">\\</span><span class="s1">Local Projects</span><span class="se">\\</span><span class="s1">Portfolio Projects</span><span class="se">\\</span><span class="s1">data</span><span class="se">\\</span><span class="s1">us-balance-annual</span><span class="se">\\</span><span class="s1">us-balance-annual.csv'</span>
-<span class="n">INTO</span> <span class="n">TABLE</span> <span class="n">us_balance_annual</span>
-<span class="n">FIELDS</span> <span class="n">TERMINATED</span> <span class="n">BY</span> <span class="s1">';'</span>
-<span class="o">--</span> <span class="n">OPTIONALLY</span> <span class="n">ENCLOSED</span> <span class="n">BY</span> <span class="s1">'"'</span>
-<span class="n">LINES</span> <span class="n">TERMINATED</span> <span class="n">BY</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">'</span>
-<span class="n">IGNORE</span> <span class="mi">1</span> <span class="n">LINES</span><span class="p">;</span> <span class="o">--</span> <span class="n">skip</span> <span class="n">header</span> <span class="n">row</span>
-
-<span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">us_balance_annual</span> <span class="n">LIMIT</span> <span class="mi">10</span><span class="p">;</span>
+<span class="n">run_sql</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=55664f1b">
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Sector</th>
+<th>Industry</th>
+<th>IndustryId</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>Basic Materials</td>
+<td>Chemicals</td>
+<td>110001</td>
+</tr>
+<tr>
+<th>1</th>
+<td>Basic Materials</td>
+<td>Forest Products</td>
+<td>110002</td>
+</tr>
+<tr>
+<th>2</th>
+<td>Basic Materials</td>
+<td>Agriculture</td>
+<td>110003</td>
+</tr>
+<tr>
+<th>3</th>
+<td>Business Services</td>
+<td>Communication Services</td>
+<td>108001</td>
+</tr>
+<tr>
+<th>4</th>
+<td>Business Services</td>
+<td>Consulting</td>
+<td>108002</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5f047678">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Load-us_balance_ttm">Load <code>us_balance_ttm</code><a class="anchor-link" href="#Load-us_balance_ttm">¶</a></h2>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=db427cb8">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">DROP</span> <span class="n">TABLE</span> <span class="n">IF</span> <span class="n">EXISTS</span> <span class="n">us_balance_ttm</span><span class="p">;</span>
-
-<span class="o">--</span> <span class="n">Create</span> <span class="n">the</span> <span class="n">table</span> <span class="n">structure</span>
-
-<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">us_balance_ttm</span> <span class="p">(</span>
-    <span class="n">Ticker</span>                          <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>     <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">SimFinId</span>                        <span class="n">INT</span>             <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">Currency</span>                        <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span>
-    <span class="n">FiscalYear</span>                      <span class="n">SMALLINT</span>        <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">FiscalPeriod</span>                    <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>      <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">ReportDate</span>                      <span class="n">DATE</span><span class="p">,</span>
-    <span class="n">PublishDate</span>                     <span class="n">DATE</span><span class="p">,</span>
-    <span class="n">RestatedDate</span>                    <span class="n">DATE</span><span class="p">,</span>
-    <span class="n">SharesBasic</span>                     <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">SharesDiluted</span>                   <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">CashAndEquiv</span>                    <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">AccountsNotesReceivable</span>         <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">Inventories</span>                     <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">TotalCurrentAssets</span>              <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">PropertyPlantEquipmentNet</span>       <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">LongTermInvestmentsReceivables</span>  <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">OtherLongTermAssets</span>             <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">TotalNoncurrentAssets</span>           <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">TotalAssets</span>                     <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">PayablesAccruals</span>                <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">ShortTermDebt</span>                   <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">TotalCurrentLiabilities</span>         <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">LongTermDebt</span>                    <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">TotalNoncurrentLiabilities</span>      <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">TotalLiabilities</span>                <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">ShareCapitalAdditionalPaidIn</span>    <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">TreasuryStock</span>                   <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">RetainedEarnings</span>                <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">TotalEquity</span>                     <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">TotalLiabilitiesEquity</span>          <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">PRIMARY</span> <span class="n">KEY</span> <span class="p">(</span><span class="n">Ticker</span><span class="p">,</span> <span class="n">FiscalYear</span><span class="p">,</span> <span class="n">FiscalPeriod</span><span class="p">)</span>
-<span class="p">);</span>
-
-<span class="o">--</span> <span class="n">Upload</span> <span class="n">the</span> <span class="n">csv</span> <span class="n">data</span>
-<span class="n">LOAD</span> <span class="n">DATA</span> <span class="n">LOCAL</span> <span class="n">INFILE</span> <span class="s1">'c:</span><span class="se">\\</span><span class="s1">Users</span><span class="se">\\</span><span class="s1">aaron</span><span class="se">\\</span><span class="s1">Desktop</span><span class="se">\\</span><span class="s1">Local Projects</span><span class="se">\\</span><span class="s1">Portfolio Projects</span><span class="se">\\</span><span class="s1">data</span><span class="se">\\</span><span class="s1">us-balance-ttm</span><span class="se">\\</span><span class="s1">us-balance-ttm.csv'</span>
-<span class="n">INTO</span> <span class="n">TABLE</span> <span class="n">us_balance_ttm</span>
-<span class="n">FIELDS</span> <span class="n">TERMINATED</span> <span class="n">BY</span> <span class="s1">';'</span>
-<span class="o">--</span> <span class="n">OPTIONALLY</span> <span class="n">ENCLOSED</span> <span class="n">BY</span> <span class="s1">'"'</span>
-<span class="n">LINES</span> <span class="n">TERMINATED</span> <span class="n">BY</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">'</span>
-<span class="n">IGNORE</span> <span class="mi">1</span> <span class="n">LINES</span><span class="p">;</span> <span class="o">--</span> <span class="n">skip</span> <span class="n">header</span> <span class="n">row</span>
-
-<span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">us_balance_ttm</span> <span class="n">LIMIT</span> <span class="mi">10</span><span class="p">;</span>
-</pre></div>
+<p>The list of U.S. companies Excel file was inspected in Excel and the file contained rows of data split over several cells in an unpredictable way. In Excel, the CONCAT() function was used to convert all rows to a single concatenated string which was then split again using Data &gt; Text to Columns tool.</p>
 </div>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=ac9d8f91">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=61ce59fc">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Load-us_cashflow_quarterly">Load <code>us_cashflow_quarterly</code><a class="anchor-link" href="#Load-us_cashflow_quarterly">¶</a></h2>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=8e7690e8">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">DROP</span> <span class="n">TABLE</span> <span class="n">IF</span> <span class="n">EXISTS</span> <span class="n">us_cashflow_quarterly</span><span class="p">;</span>
-
-<span class="o">--</span> <span class="n">Create</span> <span class="n">the</span> <span class="n">table</span> <span class="n">structure</span>
-
-<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">us_cashflow_quarterly</span> <span class="p">(</span>
-    <span class="n">Ticker</span>                          <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>     <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">SimFinId</span>                        <span class="n">INT</span>             <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">Currency</span>                        <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span>
-    <span class="n">FiscalYear</span>                      <span class="n">SMALLINT</span>        <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">FiscalPeriod</span>                    <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>      <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">ReportDate</span>                      <span class="n">DATE</span><span class="p">,</span>
-    <span class="n">PublishDate</span>                     <span class="n">DATE</span><span class="p">,</span>
-    <span class="n">RestatedDate</span>                    <span class="n">DATE</span><span class="p">,</span>
-    <span class="n">SharesBasic</span>                     <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">SharesDiluted</span>                   <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">NetIncomeStartingLine</span>           <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">DepreciationAmortization</span>        <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">NonCashItems</span>                    <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">ChangeInWorkingCapital</span>          <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">ChangeInAccountsReceivable</span>      <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">ChangeInInventories</span>             <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">ChangeInAccountsPayable</span>         <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">ChangeInOther</span>                   <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">NetCashFromOperatingActivities</span>  <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">ChangeInFixedAssetsIntangibles</span>  <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">NetChangeInLongTermInvestment</span>   <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">NetCashFromAcquisitionsDivest</span>   <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">NetCashFromInvestingActivities</span>  <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">DividendsPaid</span>                   <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">CashFromRepaymentOfDebt</span>         <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">CashFromRepurchaseOfEquity</span>      <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">NetCashFromFinancingActivities</span>  <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">NetChangeInCash</span>                 <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">PRIMARY</span> <span class="n">KEY</span> <span class="p">(</span><span class="n">Ticker</span><span class="p">,</span> <span class="n">FiscalYear</span><span class="p">,</span> <span class="n">FiscalPeriod</span><span class="p">)</span>
-<span class="p">);</span>
-
-<span class="o">--</span> <span class="n">Upload</span> <span class="n">the</span> <span class="n">csv</span> <span class="n">data</span>
-<span class="n">LOAD</span> <span class="n">DATA</span> <span class="n">LOCAL</span> <span class="n">INFILE</span> <span class="s1">'c:</span><span class="se">\\</span><span class="s1">Users</span><span class="se">\\</span><span class="s1">aaron</span><span class="se">\\</span><span class="s1">Desktop</span><span class="se">\\</span><span class="s1">Local Projects</span><span class="se">\\</span><span class="s1">Portfolio Projects</span><span class="se">\\</span><span class="s1">data</span><span class="se">\\</span><span class="s1">us-cashflow-quarterly</span><span class="se">\\</span><span class="s1">us-cashflow-quarterly.csv'</span>
-<span class="n">INTO</span> <span class="n">TABLE</span> <span class="n">us_cashflow_quarterly</span>
-<span class="n">FIELDS</span> <span class="n">TERMINATED</span> <span class="n">BY</span> <span class="s1">';'</span>
-<span class="o">--</span> <span class="n">OPTIONALLY</span> <span class="n">ENCLOSED</span> <span class="n">BY</span> <span class="s1">'"'</span>
-<span class="n">LINES</span> <span class="n">TERMINATED</span> <span class="n">BY</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">'</span>
-<span class="n">IGNORE</span> <span class="mi">1</span> <span class="n">LINES</span><span class="p">;</span> <span class="o">--</span> <span class="n">skip</span> <span class="n">header</span> <span class="n">row</span>
-
-<span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">us_cashflow_quarterly</span> <span class="n">LIMIT</span> <span class="mi">10</span><span class="p">;</span>
-</pre></div>
+<p>Next, each SimFin CSV file was uploaded into a separate SQL database table. The SQL example below (press <code>Show SQL</code> to see) shows how the table <code>us_companies</code> was uploaded to the MySQL database titled 'fundamentals_data'. All SimFin data files were uploaded similarly.</p>
 </div>
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=32730063">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a0a343e6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Load-us_cashflow_annual">Load <code>us_cashflow_annual</code><a class="anchor-link" href="#Load-us_cashflow_annual">¶</a></h2>
+<p>The company profile table (<code>us_companies</code>) had 37 rows where both the Ticker and Company name were blank ('').</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=f75d61e8">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b5405533">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">DROP</span> <span class="n">TABLE</span> <span class="n">IF</span> <span class="n">EXISTS</span> <span class="n">us_cashflow_annual</span><span class="p">;</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="s2">"""</span>
+<span class="s2">SELECT * FROM us_companies;</span>
 
-<span class="o">--</span> <span class="n">Create</span> <span class="n">the</span> <span class="n">table</span> <span class="n">structure</span>
+<span class="s2">SELECT COUNT(*)</span>
+<span class="s2">FROM us_companies</span>
+<span class="s2">WHERE (</span>
+<span class="s2">        Ticker = '' OR Ticker IS NULL</span>
+<span class="s2">    )</span>
+<span class="s2">    AND (</span>
+<span class="s2">        CompanyName = '' OR CompanyName IS NULL</span>
+<span class="s2">    )</span>
+<span class="s2">    AND (</span>
+<span class="s2">        CIK = '' OR CIK IS NULL</span>
+<span class="s2">    );</span>
 
-<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">us_cashflow_annual</span> <span class="p">(</span>
-    <span class="n">Ticker</span>                          <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>     <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">SimFinId</span>                        <span class="n">INT</span>             <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">Currency</span>                        <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span>
-    <span class="n">FiscalYear</span>                      <span class="n">SMALLINT</span>        <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">FiscalPeriod</span>                    <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>      <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">ReportDate</span>                      <span class="n">DATE</span><span class="p">,</span>
-    <span class="n">PublishDate</span>                     <span class="n">DATE</span><span class="p">,</span>
-    <span class="n">RestatedDate</span>                    <span class="n">DATE</span><span class="p">,</span>
-    <span class="n">SharesBasic</span>                     <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">SharesDiluted</span>                   <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">NetIncomeStartingLine</span>           <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">DepreciationAmortization</span>        <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">NonCashItems</span>                    <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">ChangeInWorkingCapital</span>          <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">ChangeInAccountsReceivable</span>      <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">ChangeInInventories</span>             <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">ChangeInAccountsPayable</span>         <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">ChangeInOther</span>                   <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">NetCashFromOperatingActivities</span>  <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">ChangeInFixedAssetsIntangibles</span>  <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">NetChangeInLongTermInvestment</span>   <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">NetCashFromAcquisitionsDivest</span>   <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">NetCashFromInvestingActivities</span>  <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">DividendsPaid</span>                   <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">CashFromRepaymentOfDebt</span>         <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">CashFromRepurchaseOfEquity</span>      <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">NetCashFromFinancingActivities</span>  <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">NetChangeInCash</span>                 <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">PRIMARY</span> <span class="n">KEY</span> <span class="p">(</span><span class="n">Ticker</span><span class="p">,</span> <span class="n">FiscalYear</span><span class="p">,</span> <span class="n">FiscalPeriod</span><span class="p">)</span>
-<span class="p">);</span>
+<span class="s2">SELECT "CIK" AS Field, COUNT(*) AS "Missing Values"</span>
+<span class="s2">FROM us_companies</span>
+<span class="s2">WHERE CIK = '' OR CIK IS NULL</span>
 
-<span class="o">--</span> <span class="n">Upload</span> <span class="n">the</span> <span class="n">csv</span> <span class="n">data</span>
-<span class="n">LOAD</span> <span class="n">DATA</span> <span class="n">LOCAL</span> <span class="n">INFILE</span> <span class="s1">'c:</span><span class="se">\\</span><span class="s1">Users</span><span class="se">\\</span><span class="s1">aaron</span><span class="se">\\</span><span class="s1">Desktop</span><span class="se">\\</span><span class="s1">Local Projects</span><span class="se">\\</span><span class="s1">Portfolio Projects</span><span class="se">\\</span><span class="s1">data</span><span class="se">\\</span><span class="s1">us-cashflow-annual</span><span class="se">\\</span><span class="s1">us-cashflow-annual.csv'</span>
-<span class="n">INTO</span> <span class="n">TABLE</span> <span class="n">us_cashflow_annual</span>
-<span class="n">FIELDS</span> <span class="n">TERMINATED</span> <span class="n">BY</span> <span class="s1">';'</span>
-<span class="o">--</span> <span class="n">OPTIONALLY</span> <span class="n">ENCLOSED</span> <span class="n">BY</span> <span class="s1">'"'</span>
-<span class="n">LINES</span> <span class="n">TERMINATED</span> <span class="n">BY</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">'</span>
-<span class="n">IGNORE</span> <span class="mi">1</span> <span class="n">LINES</span><span class="p">;</span> <span class="o">--</span> <span class="n">skip</span> <span class="n">header</span> <span class="n">row</span>
+<span class="s2">UNION</span>
 
-<span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">us_cashflow_annual</span> <span class="n">LIMIT</span> <span class="mi">10</span><span class="p">;</span>
+<span class="s2">SELECT "Ticker" AS Field, COUNT(*) AS "Missing Values"</span>
+<span class="s2">FROM us_companies</span>
+<span class="s2">WHERE Ticker = '' OR Ticker IS NULL</span>
+
+<span class="s2">UNION</span>
+
+<span class="s2">SELECT "CompanyName" AS Field, COUNT(*) AS "Missing Values"</span>
+<span class="s2">FROM us_companies</span>
+<span class="s2">WHERE CompanyName = '' OR CompanyName IS NULL</span>
+
+<span class="s2">UNION</span>
+
+<span class="s2">SELECT "All" AS Field, COUNT(*) AS "Missing Values"</span>
+<span class="s2">FROM us_companies</span>
+<span class="s2">WHERE (</span>
+<span class="s2">        CompanyName = '' OR CompanyName IS NULL</span>
+<span class="s2">    )</span>
+<span class="s2">    AND (</span>
+<span class="s2">        Ticker = '' OR Ticker IS NULL</span>
+<span class="s2">    )</span>
+<span class="s2">    AND (</span>
+<span class="s2">        CIK = '' OR CIK IS NULL</span>
+<span class="s2">    );</span>
+
+<span class="s2">    """</span>
+    
+<span class="n">summary_missing_values</span> <span class="o">=</span> <span class="n">run_sql</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+<span class="n">summary_missing_values</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">hide</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">"index"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b226ab16">
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<style type="text/css">
+</style>
+<table id="T_3da87">
+<thead>
+<tr>
+<th class="col_heading level0 col0" id="T_3da87_level0_col0">Field</th>
+<th class="col_heading level0 col1" id="T_3da87_level0_col1">Missing Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="data row0 col0" id="T_3da87_row0_col0">CIK</td>
+<td class="data row0 col1" id="T_3da87_row0_col1">2491</td>
+</tr>
+<tr>
+<td class="data row1 col0" id="T_3da87_row1_col0">Ticker</td>
+<td class="data row1 col1" id="T_3da87_row1_col1">39</td>
+</tr>
+<tr>
+<td class="data row2 col0" id="T_3da87_row2_col0">CompanyName</td>
+<td class="data row2 col1" id="T_3da87_row2_col1">37</td>
+</tr>
+<tr>
+<td class="data row3 col0" id="T_3da87_row3_col0">All</td>
+<td class="data row3 col1" id="T_3da87_row3_col1">2</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0bf4adf7">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Load-us_cashflow_ttm">Load <code>us_cashflow_ttm</code><a class="anchor-link" href="#Load-us_cashflow_ttm">¶</a></h2>
+<p>The data includes several financial statement tables. The range of dates for all balance sheet, income statement, and cash flow tables were confirmed below.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=502fbcab">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=cd08eee6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">DROP</span> <span class="n">TABLE</span> <span class="n">IF</span> <span class="n">EXISTS</span> <span class="n">us_cashflow_ttm</span><span class="p">;</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="s2">"""</span>
+<span class="s2">SELECT </span>
+<span class="s2">    "us_balance_quarterly" AS table_name,</span>
+<span class="s2">    MIN(ReportDate) as min_date,</span>
+<span class="s2">    MAX(ReportDate) as max_date,</span>
+<span class="s2">    TIMESTAMPDIFF(DAY, MIN(ReportDate), MAX(ReportDate)) / 365.25 AS years</span>
+<span class="s2">FROM us_balance_quarterly</span>
+<span class="s2">UNION ALL</span>
+<span class="s2">SELECT </span>
+<span class="s2">    "us_balance_annual" AS table_name,</span>
+<span class="s2">    MIN(ReportDate) as min_date,</span>
+<span class="s2">    MAX(ReportDate) as max_date,</span>
+<span class="s2">    TIMESTAMPDIFF(DAY, MIN(ReportDate), MAX(ReportDate)) / 365.25 AS years</span>
+<span class="s2">FROM us_balance_annual</span>
+<span class="s2">UNION ALL</span>
+<span class="s2">SELECT </span>
+<span class="s2">    "us_balance_ttm" AS table_name,</span>
+<span class="s2">    MIN(ReportDate) as min_date,</span>
+<span class="s2">    MAX(ReportDate) as max_date,</span>
+<span class="s2">    TIMESTAMPDIFF(DAY, MIN(ReportDate), MAX(ReportDate)) / 365.25 AS years</span>
+<span class="s2">FROM us_balance_ttm</span>
+<span class="s2">UNION ALL</span>
+<span class="s2">SELECT </span>
+<span class="s2">    "us_income_quarterly" AS table_name,</span>
+<span class="s2">    MIN(ReportDate) as min_date,</span>
+<span class="s2">    MAX(ReportDate) as max_date,</span>
+<span class="s2">    TIMESTAMPDIFF(DAY, MIN(ReportDate), MAX(ReportDate)) / 365.25 AS years</span>
+<span class="s2">FROM us_income_quarterly</span>
+<span class="s2">UNION ALL</span>
+<span class="s2">SELECT </span>
+<span class="s2">    "us_income_annual" AS table_name,</span>
+<span class="s2">    MIN(ReportDate) as min_date,</span>
+<span class="s2">    MAX(ReportDate) as max_date,</span>
+<span class="s2">    TIMESTAMPDIFF(DAY, MIN(ReportDate), MAX(ReportDate)) / 365.25 AS years</span>
+<span class="s2">FROM us_income_annual</span>
+<span class="s2">UNION ALL</span>
+<span class="s2">SELECT </span>
+<span class="s2">    "us_income_ttm" AS table_name,</span>
+<span class="s2">    MIN(ReportDate) as min_date,</span>
+<span class="s2">    MAX(ReportDate) as max_date,</span>
+<span class="s2">    TIMESTAMPDIFF(DAY, MIN(ReportDate), MAX(ReportDate)) / 365.25 AS years</span>
+<span class="s2">FROM us_income_ttm</span>
+<span class="s2">UNION ALL</span>
+<span class="s2">SELECT </span>
+<span class="s2">    "us_cashflow_quarterly" AS table_name,</span>
+<span class="s2">    MIN(ReportDate) as min_date,</span>
+<span class="s2">    MAX(ReportDate) as max_date,</span>
+<span class="s2">    TIMESTAMPDIFF(DAY, MIN(ReportDate), MAX(ReportDate)) / 365.25 AS years</span>
+<span class="s2">FROM us_cashflow_quarterly</span>
+<span class="s2">UNION ALL</span>
+<span class="s2">SELECT </span>
+<span class="s2">    "us_cashflow_annual" AS table_name,</span>
+<span class="s2">    MIN(ReportDate) as min_date,</span>
+<span class="s2">    MAX(ReportDate) as max_date,</span>
+<span class="s2">    TIMESTAMPDIFF(DAY, MIN(ReportDate), MAX(ReportDate)) / 365.25 AS years</span>
+<span class="s2">FROM us_cashflow_annual</span>
+<span class="s2">UNION ALL</span>
+<span class="s2">SELECT </span>
+<span class="s2">    "us_cashflow_ttm" AS table_name,        </span>
+<span class="s2">    MIN(ReportDate) as min_date,</span>
+<span class="s2">    MAX(ReportDate) as max_date,</span>
+<span class="s2">    TIMESTAMPDIFF(DAY, MIN(ReportDate), MAX(ReportDate)) / 365.25 AS years</span>
+<span class="s2">FROM us_cashflow_ttm;</span>
+<span class="s2">"""</span>
 
-<span class="o">--</span> <span class="n">Create</span> <span class="n">the</span> <span class="n">table</span> <span class="n">structure</span>
-
-<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">us_cashflow_ttm</span> <span class="p">(</span>
-    <span class="n">Ticker</span>                          <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>     <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">SimFinId</span>                        <span class="n">INT</span>             <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">Currency</span>                        <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span>
-    <span class="n">FiscalYear</span>                      <span class="n">SMALLINT</span>        <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">FiscalPeriod</span>                    <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>      <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">ReportDate</span>                      <span class="n">DATE</span><span class="p">,</span>
-    <span class="n">PublishDate</span>                     <span class="n">DATE</span><span class="p">,</span>
-    <span class="n">RestatedDate</span>                    <span class="n">DATE</span><span class="p">,</span>
-    <span class="n">SharesBasic</span>                     <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">SharesDiluted</span>                   <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">NetIncomeStartingLine</span>           <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">DepreciationAmortization</span>        <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">NonCashItems</span>                    <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">ChangeInWorkingCapital</span>          <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">ChangeInAccountsReceivable</span>      <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">ChangeInInventories</span>             <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">ChangeInAccountsPayable</span>         <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">ChangeInOther</span>                   <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">NetCashFromOperatingActivities</span>  <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">ChangeInFixedAssetsIntangibles</span>  <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">NetChangeInLongTermInvestment</span>   <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">NetCashFromAcquisitionsDivest</span>   <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">NetCashFromInvestingActivities</span>  <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">DividendsPaid</span>                   <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">CashFromRepaymentOfDebt</span>         <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">CashFromRepurchaseOfEquity</span>      <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">NetCashFromFinancingActivities</span>  <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">NetChangeInCash</span>                 <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">PRIMARY</span> <span class="n">KEY</span> <span class="p">(</span><span class="n">Ticker</span><span class="p">,</span> <span class="n">FiscalYear</span><span class="p">,</span> <span class="n">FiscalPeriod</span><span class="p">)</span>
-<span class="p">);</span>
-
-<span class="o">--</span> <span class="n">Upload</span> <span class="n">the</span> <span class="n">csv</span> <span class="n">data</span>
-<span class="n">LOAD</span> <span class="n">DATA</span> <span class="n">LOCAL</span> <span class="n">INFILE</span> <span class="s1">'c:</span><span class="se">\\</span><span class="s1">Users</span><span class="se">\\</span><span class="s1">aaron</span><span class="se">\\</span><span class="s1">Desktop</span><span class="se">\\</span><span class="s1">Local Projects</span><span class="se">\\</span><span class="s1">Portfolio Projects</span><span class="se">\\</span><span class="s1">data</span><span class="se">\\</span><span class="s1">us-cashflow-ttm</span><span class="se">\\</span><span class="s1">us-cashflow-ttm.csv'</span>
-<span class="n">INTO</span> <span class="n">TABLE</span> <span class="n">us_cashflow_ttm</span>
-<span class="n">FIELDS</span> <span class="n">TERMINATED</span> <span class="n">BY</span> <span class="s1">';'</span>
-<span class="o">--</span> <span class="n">OPTIONALLY</span> <span class="n">ENCLOSED</span> <span class="n">BY</span> <span class="s1">'"'</span>
-<span class="n">LINES</span> <span class="n">TERMINATED</span> <span class="n">BY</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">'</span>
-<span class="n">IGNORE</span> <span class="mi">1</span> <span class="n">LINES</span><span class="p">;</span> <span class="o">--</span> <span class="n">skip</span> <span class="n">header</span> <span class="n">row</span>
-
-<span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">us_cashflow_ttm</span> <span class="n">LIMIT</span> <span class="mi">10</span><span class="p">;</span>
+<span class="n">run_sql</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5c2b4c71">
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>table_name</th>
+<th>min_date</th>
+<th>max_date</th>
+<th>years</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>us_balance_quarterly</td>
+<td>2020-07-31</td>
+<td>2025-05-31</td>
+<td>4.8323</td>
+</tr>
+<tr>
+<th>1</th>
+<td>us_balance_annual</td>
+<td>2020-07-31</td>
+<td>2025-05-31</td>
+<td>4.8323</td>
+</tr>
+<tr>
+<th>2</th>
+<td>us_balance_ttm</td>
+<td>2020-07-31</td>
+<td>2025-05-31</td>
+<td>4.8323</td>
+</tr>
+<tr>
+<th>3</th>
+<td>us_income_quarterly</td>
+<td>2020-07-31</td>
+<td>2025-05-31</td>
+<td>4.8323</td>
+</tr>
+<tr>
+<th>4</th>
+<td>us_income_annual</td>
+<td>2020-07-31</td>
+<td>2025-05-31</td>
+<td>4.8323</td>
+</tr>
+<tr>
+<th>5</th>
+<td>us_income_ttm</td>
+<td>2020-07-31</td>
+<td>2025-05-31</td>
+<td>4.8323</td>
+</tr>
+<tr>
+<th>6</th>
+<td>us_cashflow_quarterly</td>
+<td>2020-07-31</td>
+<td>2025-05-31</td>
+<td>4.8323</td>
+</tr>
+<tr>
+<th>7</th>
+<td>us_cashflow_annual</td>
+<td>2020-07-31</td>
+<td>2025-05-31</td>
+<td>4.8323</td>
+</tr>
+<tr>
+<th>8</th>
+<td>us_cashflow_ttm</td>
+<td>2020-07-31</td>
+<td>2025-05-31</td>
+<td>4.8323</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5e3ba2c1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Load-us_shareprices_daily">Load <code>us_shareprices_daily</code><a class="anchor-link" href="#Load-us_shareprices_daily">¶</a></h2>
+<p>The data spans a period starting <em>July 31, 2020</em> and ending <em>May 31, 2025</em>, covering about 4.8 years.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=bee1ed7e">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=257cc619">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Data-Completeness">Data Completeness<a class="anchor-link" href="#Data-Completeness">¶</a></h2><p>Before relying on the raw financial statement tables downstream, the completeness of key line items was checked - the percentage of rows where a field is present and non-zero. This flags statement line items that are sparsely populated in the raw SimFin data before ratios are built on top of them. <a href="./sql/">Code</a></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=1ebd9b89">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">DROP</span> <span class="n">TABLE</span> <span class="n">IF</span> <span class="n">EXISTS</span> <span class="n">us_shareprices_daily</span><span class="p">;</span>
-
-<span class="o">--</span> <span class="n">Create</span> <span class="n">the</span> <span class="n">table</span> <span class="n">structure</span>
-
-<span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">us_shareprices_daily</span> <span class="p">(</span>
-    <span class="n">Ticker</span>              <span class="n">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>     <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">SimFinId</span>            <span class="n">INT</span>             <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">Date</span>                <span class="n">DATE</span>            <span class="n">NOT</span> <span class="n">NULL</span><span class="p">,</span>
-    <span class="n">Open</span>                <span class="n">DECIMAL</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span>
-    <span class="n">High</span>                <span class="n">DECIMAL</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span>
-    <span class="n">Low</span>                 <span class="n">DECIMAL</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span>
-    <span class="n">Close</span>               <span class="n">DECIMAL</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span>
-    <span class="n">AdjClose</span>            <span class="n">DECIMAL</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span>
-    <span class="n">Volume</span>              <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">Dividend</span>            <span class="n">DECIMAL</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">),</span>
-    <span class="n">SharesOutstanding</span>   <span class="n">BIGINT</span><span class="p">,</span>
-    <span class="n">PRIMARY</span> <span class="n">KEY</span> <span class="p">(</span><span class="n">Ticker</span><span class="p">,</span> <span class="n">Date</span><span class="p">)</span>
-<span class="p">);</span>
-
-<span class="o">--</span> <span class="n">Upload</span> <span class="n">the</span> <span class="n">csv</span> <span class="n">data</span>
-<span class="n">LOAD</span> <span class="n">DATA</span> <span class="n">LOCAL</span> <span class="n">INFILE</span> <span class="s1">'c:</span><span class="se">\\</span><span class="s1">Users</span><span class="se">\\</span><span class="s1">aaron</span><span class="se">\\</span><span class="s1">Desktop</span><span class="se">\\</span><span class="s1">Local Projects</span><span class="se">\\</span><span class="s1">Portfolio Projects</span><span class="se">\\</span><span class="s1">data</span><span class="se">\\</span><span class="s1">us-shareprices-daily</span><span class="se">\\</span><span class="s1">us-shareprices-daily.csv'</span>
-<span class="n">INTO</span> <span class="n">TABLE</span> <span class="n">us_shareprices_daily</span>
-<span class="n">FIELDS</span> <span class="n">TERMINATED</span> <span class="n">BY</span> <span class="s1">';'</span>
-<span class="o">--</span> <span class="n">OPTIONALLY</span> <span class="n">ENCLOSED</span> <span class="n">BY</span> <span class="s1">'"'</span>
-<span class="n">LINES</span> <span class="n">TERMINATED</span> <span class="n">BY</span> <span class="s1">'</span><span class="se">\n</span><span class="s1">'</span>
-<span class="n">IGNORE</span> <span class="mi">1</span> <span class="n">LINES</span><span class="p">;</span> <span class="o">--</span> <span class="n">skip</span> <span class="n">header</span> <span class="n">row</span>
-
-<span class="n">SELECT</span> <span class="o">*</span> <span class="n">FROM</span> <span class="n">us_shareprices_daily</span> <span class="n">LIMIT</span> <span class="mi">10</span><span class="p">;</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Balance sheet field completeness</span>
+<span class="n">balance_sheet_validation</span> <span class="o">=</span> <span class="n">run_sql_file</span><span class="p">(</span><span class="n">SQL_DIR</span> <span class="o">/</span> <span class="s2">"data validation - balance sheet.sql"</span><span class="p">)</span>
+<span class="n">balance_sheet_validation</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">hide</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">"index"</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<style type="text/css">
+</style>
+<table id="T_69417">
+<thead>
+<tr>
+<th class="col_heading level0 col0" id="T_69417_level0_col0">TotalRows</th>
+<th class="col_heading level0 col1" id="T_69417_level0_col1">CashAndEquiv</th>
+<th class="col_heading level0 col2" id="T_69417_level0_col2">AccountsNotesReceivable</th>
+<th class="col_heading level0 col3" id="T_69417_level0_col3">Inventories</th>
+<th class="col_heading level0 col4" id="T_69417_level0_col4">TotalCurrentAssets</th>
+<th class="col_heading level0 col5" id="T_69417_level0_col5">PropertyPlantEquipmentNet</th>
+<th class="col_heading level0 col6" id="T_69417_level0_col6">LongTermInvestmentsReceivables</th>
+<th class="col_heading level0 col7" id="T_69417_level0_col7">OtherLongTermAssets</th>
+<th class="col_heading level0 col8" id="T_69417_level0_col8">TotalAssets</th>
+<th class="col_heading level0 col9" id="T_69417_level0_col9">PayablesAccruals</th>
+<th class="col_heading level0 col10" id="T_69417_level0_col10">ShortTermDebt</th>
+<th class="col_heading level0 col11" id="T_69417_level0_col11">TotalCurrentLiabilities</th>
+<th class="col_heading level0 col12" id="T_69417_level0_col12">LongTermDebt</th>
+<th class="col_heading level0 col13" id="T_69417_level0_col13">TotalLiabilities</th>
+<th class="col_heading level0 col14" id="T_69417_level0_col14">ShareCapitalAdditionalPaidIn</th>
+<th class="col_heading level0 col15" id="T_69417_level0_col15">TotalEquity</th>
+<th class="col_heading level0 col16" id="T_69417_level0_col16">TotalLiabilitiesEquity</th>
+<th class="col_heading level0 col17" id="T_69417_level0_col17">SharesBasic</th>
+<th class="col_heading level0 col18" id="T_69417_level0_col18">SharesDiluted</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="data row0 col0" id="T_69417_row0_col0">16898</td>
+<td class="data row0 col1" id="T_69417_row0_col1">99.5%</td>
+<td class="data row0 col2" id="T_69417_row0_col2">78.3%</td>
+<td class="data row0 col3" id="T_69417_row0_col3">54.3%</td>
+<td class="data row0 col4" id="T_69417_row0_col4">99.9%</td>
+<td class="data row0 col5" id="T_69417_row0_col5">93.1%</td>
+<td class="data row0 col6" id="T_69417_row0_col6">23.2%</td>
+<td class="data row0 col7" id="T_69417_row0_col7">96.6%</td>
+<td class="data row0 col8" id="T_69417_row0_col8">100.0%</td>
+<td class="data row0 col9" id="T_69417_row0_col9">99.6%</td>
+<td class="data row0 col10" id="T_69417_row0_col10">53.0%</td>
+<td class="data row0 col11" id="T_69417_row0_col11">99.9%</td>
+<td class="data row0 col12" id="T_69417_row0_col12">70.6%</td>
+<td class="data row0 col13" id="T_69417_row0_col13">99.9%</td>
+<td class="data row0 col14" id="T_69417_row0_col14">98.9%</td>
+<td class="data row0 col15" id="T_69417_row0_col15">100.0%</td>
+<td class="data row0 col16" id="T_69417_row0_col16">100.0%</td>
+<td class="data row0 col17" id="T_69417_row0_col17">98.8%</td>
+<td class="data row0 col18" id="T_69417_row0_col18">98.3%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d2093332">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Income statement field completeness</span>
+<span class="n">income_statement_validation</span> <span class="o">=</span> <span class="n">run_sql_file</span><span class="p">(</span><span class="n">SQL_DIR</span> <span class="o">/</span> <span class="s2">"data validation - income statement.sql"</span><span class="p">)</span>
+<span class="n">income_statement_validation</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">hide</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">"index"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<style type="text/css">
+</style>
+<table id="T_634af">
+<thead>
+<tr>
+<th class="col_heading level0 col0" id="T_634af_level0_col0">TotalRows</th>
+<th class="col_heading level0 col1" id="T_634af_level0_col1">Revenue</th>
+<th class="col_heading level0 col2" id="T_634af_level0_col2">GrossProfit</th>
+<th class="col_heading level0 col3" id="T_634af_level0_col3">OperatingIncomeLoss</th>
+<th class="col_heading level0 col4" id="T_634af_level0_col4">NetIncomeCommon</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="data row0 col0" id="T_634af_row0_col0">16897</td>
+<td class="data row0 col1" id="T_634af_row0_col1">89.2%</td>
+<td class="data row0 col2" id="T_634af_row0_col2">77.8%</td>
+<td class="data row0 col3" id="T_634af_row0_col3">100.0%</td>
+<td class="data row0 col4" id="T_634af_row0_col4">99.9%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=bc5a3901">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Cash flow statement field completeness</span>
+<span class="n">cash_flow_validation</span> <span class="o">=</span> <span class="n">run_sql_file</span><span class="p">(</span><span class="n">SQL_DIR</span> <span class="o">/</span> <span class="s2">"data validation - cash flows.sql"</span><span class="p">)</span>
+<span class="n">cash_flow_validation</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">hide</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">"index"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<style type="text/css">
+</style>
+<table id="T_2b7fa">
+<thead>
+<tr>
+<th class="col_heading level0 col0" id="T_2b7fa_level0_col0">TotalRows</th>
+<th class="col_heading level0 col1" id="T_2b7fa_level0_col1">NetCashFromOperatingActivities</th>
+<th class="col_heading level0 col2" id="T_2b7fa_level0_col2">NetIncomeStartingLine</th>
+<th class="col_heading level0 col3" id="T_2b7fa_level0_col3">SharesBasic</th>
+<th class="col_heading level0 col4" id="T_2b7fa_level0_col4">SharesDiluted</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="data row0 col0" id="T_2b7fa_row0_col0">16895</td>
+<td class="data row0 col1" id="T_2b7fa_row0_col1">99.9%</td>
+<td class="data row0 col2" id="T_2b7fa_row0_col2">99.2%</td>
+<td class="data row0 col3" id="T_2b7fa_row0_col3">98.8%</td>
+<td class="data row0 col4" id="T_2b7fa_row0_col4">98.3%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5740c979">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Next, the minimum and maximum prices for both <code>Close</code> and <code>AdjClose</code> were observed.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7510e9c2">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="s2">"""</span>
+<span class="s2">SELECT </span>
+<span class="s2">    "Close" AS "Field", ROUND(MIN(Close), 2) AS "Min",</span>
+<span class="s2">    ROUND(MAX(Close), 2) AS "Max"</span>
+<span class="s2">FROM us_shareprices_daily</span>
+<span class="s2">UNION ALL</span>
+<span class="s2">SELECT </span>
+<span class="s2">    "AdjClose" AS "Field", ROUND(MIN(AdjClose), 2) AS "Min",</span>
+<span class="s2">    ROUND(MAX(AdjClose), 2) AS "Max"</span>
+<span class="s2">FROM us_shareprices_daily;</span>
+<span class="s2">"""</span>
+<span class="n">price_stats</span> <span class="o">=</span> <span class="n">run_sql</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+<span class="n">price_stats</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">hide</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">"index"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[14]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<style type="text/css">
+</style>
+<table id="T_ea4d2">
+<thead>
+<tr>
+<th class="col_heading level0 col0" id="T_ea4d2_level0_col0">Field</th>
+<th class="col_heading level0 col1" id="T_ea4d2_level0_col1">Min</th>
+<th class="col_heading level0 col2" id="T_ea4d2_level0_col2">Max</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="data row0 col0" id="T_ea4d2_row0_col0">Close</td>
+<td class="data row0 col1" id="T_ea4d2_row0_col1">0.00</td>
+<td class="data row0 col2" id="T_ea4d2_row0_col2">99999999.99</td>
+</tr>
+<tr>
+<td class="data row1 col0" id="T_ea4d2_row1_col0">AdjClose</td>
+<td class="data row1 col1" id="T_ea4d2_row1_col1">0.00</td>
+<td class="data row1 col2" id="T_ea4d2_row1_col2">99999999.99</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9efa8601">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>The <code>Close</code> price ranged from \$0 to \$99,999,999.99.
+The <code>Adj. Close</code> price ranged from \$0 to \$9,984,240.00.</p>
+<p>Tickers where a <code>Close</code> or <code>AdjClose</code> price for any day exceeding \$100,000 were removed, since the common investor is not likely to have an investing budget exceeding \$100,000 for any single ticker. The user can adjust this to fit their budget or use the original <code>us_shareprices_daily</code> table.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=511e5c34">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># Hide</span>
+<span class="n">query</span> <span class="o">=</span> <span class="s2">"""</span>
+<span class="s2">DROP TABLE IF EXISTS us_shareprices_daily_filtered;</span>
+
+<span class="s2">CREATE TABLE us_shareprices_daily_filtered AS</span>
+
+<span class="s2">WITH</span>
+<span class="s2">    filtered_data AS (</span>
+<span class="s2">        SELECT DISTINCT</span>
+<span class="s2">            Ticker</span>
+<span class="s2">        FROM us_shareprices_daily</span>
+<span class="s2">        WHERE</span>
+<span class="s2">            Close &gt; 100000</span>
+<span class="s2">            OR AdjClose &gt; 100000</span>
+<span class="s2">    )</span>
+<span class="s2">SELECT *</span>
+<span class="s2">FROM us_shareprices_daily</span>
+<span class="s2">WHERE</span>
+<span class="s2">    Ticker NOT IN (SELECT Ticker FROM filtered_data)</span>
+<span class="s2">"""</span>
+
+<span class="n">run_sql</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=1f19cd56">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [16]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">prices_daily_filtered</span> <span class="o">=</span> <span class="n">run_sql</span><span class="p">(</span><span class="s2">"SELECT * FROM us_shareprices_daily_filtered LIMIT 5"</span><span class="p">)</span>
+<span class="n">prices_daily_filtered</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">hide</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">"index"</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[16]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<style type="text/css">
+</style>
+<table id="T_5023e">
+<thead>
+<tr>
+<th class="col_heading level0 col0" id="T_5023e_level0_col0">Ticker</th>
+<th class="col_heading level0 col1" id="T_5023e_level0_col1">SimFinId</th>
+<th class="col_heading level0 col2" id="T_5023e_level0_col2">Date</th>
+<th class="col_heading level0 col3" id="T_5023e_level0_col3">Open</th>
+<th class="col_heading level0 col4" id="T_5023e_level0_col4">High</th>
+<th class="col_heading level0 col5" id="T_5023e_level0_col5">Low</th>
+<th class="col_heading level0 col6" id="T_5023e_level0_col6">Close</th>
+<th class="col_heading level0 col7" id="T_5023e_level0_col7">AdjClose</th>
+<th class="col_heading level0 col8" id="T_5023e_level0_col8">Volume</th>
+<th class="col_heading level0 col9" id="T_5023e_level0_col9">Dividend</th>
+<th class="col_heading level0 col10" id="T_5023e_level0_col10">SharesOutstanding</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="data row0 col0" id="T_5023e_row0_col0"></td>
+<td class="data row0 col1" id="T_5023e_row0_col1">18728220</td>
+<td class="data row0 col2" id="T_5023e_row0_col2">2022-07-12</td>
+<td class="data row0 col3" id="T_5023e_row0_col3">76.1000</td>
+<td class="data row0 col4" id="T_5023e_row0_col4">134.0000</td>
+<td class="data row0 col5" id="T_5023e_row0_col5">75.1000</td>
+<td class="data row0 col6" id="T_5023e_row0_col6">120.5000</td>
+<td class="data row0 col7" id="T_5023e_row0_col7">120.5000</td>
+<td class="data row0 col8" id="T_5023e_row0_col8">148681</td>
+<td class="data row0 col9" id="T_5023e_row0_col9">0.000000</td>
+<td class="data row0 col10" id="T_5023e_row0_col10">0</td>
+</tr>
+<tr>
+<td class="data row1 col0" id="T_5023e_row1_col0"></td>
+<td class="data row1 col1" id="T_5023e_row1_col1">18728220</td>
+<td class="data row1 col2" id="T_5023e_row1_col2">2022-07-13</td>
+<td class="data row1 col3" id="T_5023e_row1_col3">97.7000</td>
+<td class="data row1 col4" id="T_5023e_row1_col4">120.0000</td>
+<td class="data row1 col5" id="T_5023e_row1_col5">88.0000</td>
+<td class="data row1 col6" id="T_5023e_row1_col6">88.0000</td>
+<td class="data row1 col7" id="T_5023e_row1_col7">88.0000</td>
+<td class="data row1 col8" id="T_5023e_row1_col8">26444</td>
+<td class="data row1 col9" id="T_5023e_row1_col9">0.000000</td>
+<td class="data row1 col10" id="T_5023e_row1_col10">0</td>
+</tr>
+<tr>
+<td class="data row2 col0" id="T_5023e_row2_col0"></td>
+<td class="data row2 col1" id="T_5023e_row2_col1">18728220</td>
+<td class="data row2 col2" id="T_5023e_row2_col2">2022-07-14</td>
+<td class="data row2 col3" id="T_5023e_row2_col3">80.1000</td>
+<td class="data row2 col4" id="T_5023e_row2_col4">82.6000</td>
+<td class="data row2 col5" id="T_5023e_row2_col5">63.2100</td>
+<td class="data row2 col6" id="T_5023e_row2_col6">73.5000</td>
+<td class="data row2 col7" id="T_5023e_row2_col7">73.5000</td>
+<td class="data row2 col8" id="T_5023e_row2_col8">13413</td>
+<td class="data row2 col9" id="T_5023e_row2_col9">0.000000</td>
+<td class="data row2 col10" id="T_5023e_row2_col10">0</td>
+</tr>
+<tr>
+<td class="data row3 col0" id="T_5023e_row3_col0"></td>
+<td class="data row3 col1" id="T_5023e_row3_col1">18728220</td>
+<td class="data row3 col2" id="T_5023e_row3_col2">2022-07-15</td>
+<td class="data row3 col3" id="T_5023e_row3_col3">76.4000</td>
+<td class="data row3 col4" id="T_5023e_row3_col4">78.2000</td>
+<td class="data row3 col5" id="T_5023e_row3_col5">68.0000</td>
+<td class="data row3 col6" id="T_5023e_row3_col6">68.0000</td>
+<td class="data row3 col7" id="T_5023e_row3_col7">68.0000</td>
+<td class="data row3 col8" id="T_5023e_row3_col8">4699</td>
+<td class="data row3 col9" id="T_5023e_row3_col9">0.000000</td>
+<td class="data row3 col10" id="T_5023e_row3_col10">0</td>
+</tr>
+<tr>
+<td class="data row4 col0" id="T_5023e_row4_col0"></td>
+<td class="data row4 col1" id="T_5023e_row4_col1">18728220</td>
+<td class="data row4 col2" id="T_5023e_row4_col2">2022-07-18</td>
+<td class="data row4 col3" id="T_5023e_row4_col3">64.5000</td>
+<td class="data row4 col4" id="T_5023e_row4_col4">84.9000</td>
+<td class="data row4 col5" id="T_5023e_row4_col5">63.0000</td>
+<td class="data row4 col6" id="T_5023e_row4_col6">67.0000</td>
+<td class="data row4 col7" id="T_5023e_row4_col7">67.0000</td>
+<td class="data row4 col8" id="T_5023e_row4_col8">6941</td>
+<td class="data row4 col9" id="T_5023e_row4_col9">0.000000</td>
+<td class="data row4 col10" id="T_5023e_row4_col10">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=772fd156">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Next, the daily stock prices were converted to monthly prices. <a href="./sql/derived/">Code</a></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=dfad286d">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">run_sql_file</span><span class="p">(</span><span class="n">SQL_DIR</span> <span class="o">/</span> <span class="s2">"derived"</span> <span class="o">/</span> <span class="s2">"01 - create table - us_shareprices_monthly.sql"</span><span class="p">)</span>
+<span class="n">us_shareprices_monthly</span> <span class="o">=</span> <span class="n">run_sql</span><span class="p">(</span><span class="s2">"SELECT * FROM us_shareprices_monthly"</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">us_shareprices_monthly</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Ticker</th>
+<th>Date</th>
+<th>Close</th>
+<th>AdjClose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>300528</th>
+<td>ZYNE</td>
+<td>2023-06-30</td>
+<td>0.3300</td>
+<td>0.3300</td>
+</tr>
+<tr>
+<th>300529</th>
+<td>ZYNE</td>
+<td>2023-07-31</td>
+<td>0.3600</td>
+<td>0.3600</td>
+</tr>
+<tr>
+<th>300530</th>
+<td>ZYNE</td>
+<td>2023-08-31</td>
+<td>1.3300</td>
+<td>1.3300</td>
+</tr>
+<tr>
+<th>300531</th>
+<td>ZYNE</td>
+<td>2023-09-29</td>
+<td>1.2700</td>
+<td>1.2700</td>
+</tr>
+<tr>
+<th>300532</th>
+<td>ZYNE</td>
+<td>2023-10-11</td>
+<td>1.3000</td>
+<td>1.3000</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=2fc6f344">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">run_sql_file</span><span class="p">(</span><span class="n">SQL_DIR</span> <span class="o">/</span> <span class="s2">"derived"</span> <span class="o">/</span> <span class="s2">"02 - create table - us_shareprices_monthly_returns.sql"</span><span class="p">)</span>
+<span class="n">us_shareprices_monthly_returns</span> <span class="o">=</span> <span class="n">run_sql</span><span class="p">(</span><span class="s2">"SELECT * FROM us_shareprices_monthly_returns"</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">us_shareprices_monthly_returns</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Ticker</th>
+<th>Date</th>
+<th>AdjClose</th>
+<th>Close</th>
+<th>PrevAdjClose</th>
+<th>MonthlyReturn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>300528</th>
+<td>ZYNE</td>
+<td>2023-06-30</td>
+<td>0.3300</td>
+<td>0.3300</td>
+<td>0.3300</td>
+<td>0.000000</td>
+</tr>
+<tr>
+<th>300529</th>
+<td>ZYNE</td>
+<td>2023-07-31</td>
+<td>0.3600</td>
+<td>0.3600</td>
+<td>0.3300</td>
+<td>0.090909</td>
+</tr>
+<tr>
+<th>300530</th>
+<td>ZYNE</td>
+<td>2023-08-31</td>
+<td>1.3300</td>
+<td>1.3300</td>
+<td>0.3600</td>
+<td>2.694444</td>
+</tr>
+<tr>
+<th>300531</th>
+<td>ZYNE</td>
+<td>2023-09-29</td>
+<td>1.2700</td>
+<td>1.2700</td>
+<td>1.3300</td>
+<td>-0.045113</td>
+</tr>
+<tr>
+<th>300532</th>
+<td>ZYNE</td>
+<td>2023-10-11</td>
+<td>1.3000</td>
+<td>1.3000</td>
+<td>1.2700</td>
+<td>0.023622</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c254771f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Price-Statistics">Price Statistics<a class="anchor-link" href="#Price-Statistics">¶</a></h2><p>Finally, a set of price-based statistics was derived from the monthly price series and stored in <code>us_shareprices_stats</code>: running maximum, drawdown from that peak, 3/6/12-month moving averages of the adjusted close, and trailing 3-year annualized volatility (computed from monthly log returns). These give a quick read on a ticker's trend and risk profile, independent of the fundamentals-based ratios computed below. <a href="./sql/derived/">Code</a></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b69ed776">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">run_sql_file</span><span class="p">(</span><span class="n">SQL_DIR</span> <span class="o">/</span> <span class="s2">"derived"</span> <span class="o">/</span> <span class="s2">"create table - us_shareprices_stats.sql"</span><span class="p">)</span>
+<span class="n">us_shareprices_stats</span> <span class="o">=</span> <span class="n">run_sql</span><span class="p">(</span><span class="s2">"SELECT * FROM us_shareprices_stats"</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">us_shareprices_stats</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Ticker</th>
+<th>Date</th>
+<th>Close</th>
+<th>AdjClose</th>
+<th>MonthlyReturn</th>
+<th>RunningMax</th>
+<th>Drawdown</th>
+<th>MA_3M</th>
+<th>MA_6M</th>
+<th>MA_1Y</th>
+<th>Annualized_3Yr_Volatility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>300528</th>
+<td>ZYNE</td>
+<td>2023-06-30</td>
+<td>0.3300</td>
+<td>0.3300</td>
+<td>0.0000</td>
+<td>5.6800</td>
+<td>-0.9420</td>
+<td>0.3470</td>
+<td>0.4330</td>
+<td>0.6200</td>
+<td>0.6402</td>
+</tr>
+<tr>
+<th>300529</th>
+<td>ZYNE</td>
+<td>2023-07-31</td>
+<td>0.3600</td>
+<td>0.3600</td>
+<td>0.0870</td>
+<td>5.6800</td>
+<td>-0.9370</td>
+<td>0.3400</td>
+<td>0.3820</td>
+<td>0.5550</td>
+<td>0.6375</td>
+</tr>
+<tr>
+<th>300530</th>
+<td>ZYNE</td>
+<td>2023-08-31</td>
+<td>1.3300</td>
+<td>1.3300</td>
+<td>1.3068</td>
+<td>5.6800</td>
+<td>-0.7660</td>
+<td>0.6730</td>
+<td>0.5270</td>
+<td>0.5680</td>
+<td>1.0082</td>
+</tr>
+<tr>
+<th>300531</th>
+<td>ZYNE</td>
+<td>2023-09-29</td>
+<td>1.2700</td>
+<td>1.2700</td>
+<td>-0.0462</td>
+<td>5.6800</td>
+<td>-0.7760</td>
+<td>0.9870</td>
+<td>0.6670</td>
+<td>0.6130</td>
+<td>1.0064</td>
+</tr>
+<tr>
+<th>300532</th>
+<td>ZYNE</td>
+<td>2023-10-11</td>
+<td>1.3000</td>
+<td>1.3000</td>
+<td>0.0233</td>
+<td>5.6800</td>
+<td>-0.7710</td>
+<td>1.3000</td>
+<td>0.8200</td>
+<td>0.6610</td>
+<td>1.0062</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a2a50107">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Ratios-&amp;-Metrics">Ratios &amp; Metrics<a class="anchor-link" href="#Ratios-&amp;-Metrics">¶</a></h1>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=842aaff7">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Dates-Lookup-Table">Dates Lookup Table<a class="anchor-link" href="#Dates-Lookup-Table">¶</a></h2><p>Dates are an important part of any analysis that uses fundamentals data. Market price dates don't always align with fundamentals dates. Moreover, there are many kinds of dates to consider. Any serious analysis would try to avoid lookback bias where a decision based on information not yet known. To avoid this bias, the stock price date following the fundamentals publish date was collected.</p>
+<p>For backtesting decisions, it is often easier to use a regular month-end price date where the month-end date is the end of the month following the publish date. The month-end date following the publish date was calculated as the last day of the publish-date month or, if the publish date is within 3 days of the month end, the last day of the following month.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=1f64f41a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">run_sql_file</span><span class="p">(</span><span class="n">SQL_DIR</span> <span class="o">/</span> <span class="s2">"derived"</span> <span class="o">/</span> <span class="s2">"create table - dates_lookup.sql"</span><span class="p">)</span>
+<span class="n">dates_lookup</span> <span class="o">=</span> <span class="n">run_sql</span><span class="p">(</span><span class="s2">"SELECT * FROM dates_lookup"</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">dates_lookup</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Ticker</th>
+<th>ReportDate</th>
+<th>PrevCloseDate</th>
+<th>PublishDate</th>
+<th>NextMarketDateFollowingPublish</th>
+<th>NextMonthEndDateFollowingPublish</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>47640</th>
+<td>ZYXI</td>
+<td>2024-03-31</td>
+<td>None</td>
+<td>2024-04-30</td>
+<td>None</td>
+<td>None</td>
+</tr>
+<tr>
+<th>47641</th>
+<td>ZYXI</td>
+<td>2024-06-30</td>
+<td>None</td>
+<td>2024-07-25</td>
+<td>None</td>
+<td>None</td>
+</tr>
+<tr>
+<th>47642</th>
+<td>ZYXI</td>
+<td>2024-09-30</td>
+<td>None</td>
+<td>2024-10-24</td>
+<td>None</td>
+<td>None</td>
+</tr>
+<tr>
+<th>47643</th>
+<td>ZYXI</td>
+<td>2024-12-31</td>
+<td>None</td>
+<td>2025-03-11</td>
+<td>None</td>
+<td>None</td>
+</tr>
+<tr>
+<th>47644</th>
+<td>ZYXI</td>
+<td>2025-03-31</td>
+<td>None</td>
+<td>2025-04-29</td>
+<td>None</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=daf4ecbe">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Miscellaneous-Metrics">Miscellaneous Metrics<a class="anchor-link" href="#Miscellaneous-Metrics">¶</a></h2><p>Next, miscellaneous metrics such as effective tax rate, market cap, total debt, and free cash flow were computed and inserted into a new table, <code>metrics_misc</code></p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=6c5f8d44">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">run_sql_file</span><span class="p">(</span><span class="n">SQL_DIR</span> <span class="o">/</span> <span class="s2">"derived"</span> <span class="o">/</span> <span class="s2">"create table - metrics_misc.sql"</span><span class="p">)</span>
+<span class="n">metrics_misc</span> <span class="o">=</span> <span class="n">run_sql</span><span class="p">(</span><span class="s2">"SELECT * FROM metrics_misc"</span><span class="p">)</span>
+<span class="n">metrics_misc</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">120</span><span class="p">:</span><span class="mi">126</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Ticker</th>
+<th>ReportDate</th>
+<th>CashAndEquiv</th>
+<th>EffectiveTaxRate</th>
+<th>PrevCloseDate</th>
+<th>MarketCap</th>
+<th>TotalDebt</th>
+<th>FreeCashFlow</th>
+<th>EnterpriseValue</th>
+<th>PayoutRatio</th>
+<th>FilledPayoutRatio</th>
+<th>TtmAvgPayoutRatio</th>
+<th>TickerAveragePayout</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>120</th>
+<td>AAOI</td>
+<td>2023-03-31</td>
+<td>16103000.0</td>
+<td>None</td>
+<td>2023-03-31</td>
+<td>63806803.9700</td>
+<td>130631000.0</td>
+<td>-10013000.0</td>
+<td>178334803.9700</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+</tr>
+<tr>
+<th>121</th>
+<td>AAOI</td>
+<td>2023-06-30</td>
+<td>21578000.0</td>
+<td>None</td>
+<td>2023-06-30</td>
+<td>175751823.5600</td>
+<td>117192000.0</td>
+<td>14236000.0</td>
+<td>271365823.5600</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+</tr>
+<tr>
+<th>122</th>
+<td>AAOI</td>
+<td>2023-09-30</td>
+<td>21940000.0</td>
+<td>None</td>
+<td>2023-09-29</td>
+<td>359532403.5600</td>
+<td>111447000.0</td>
+<td>-16912000.0</td>
+<td>449039403.5600</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+</tr>
+<tr>
+<th>123</th>
+<td>AAOI</td>
+<td>2023-12-31</td>
+<td>45366000.0</td>
+<td>None</td>
+<td>2023-12-29</td>
+<td>707932520.4000</td>
+<td>115198000.0</td>
+<td>-4772000.0</td>
+<td>777764520.4000</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+</tr>
+<tr>
+<th>124</th>
+<td>AAOI</td>
+<td>2024-03-31</td>
+<td>8433000.0</td>
+<td>None</td>
+<td>2024-03-28</td>
+<td>531698955.4800</td>
+<td>111172000.0</td>
+<td>-34363000.0</td>
+<td>634437955.4800</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+</tr>
+<tr>
+<th>125</th>
+<td>AAOI</td>
+<td>2024-06-30</td>
+<td>10653000.0</td>
+<td>None</td>
+<td>2024-06-28</td>
+<td>326333528.8000</td>
+<td>104244000.0</td>
+<td>-5076000.0</td>
+<td>419924528.8000</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=84978815">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Growth-Metrics">Growth Metrics<a class="anchor-link" href="#Growth-Metrics">¶</a></h2><p>Growth rates - both year-on-year (YoY) and quarter-on-quarter (QoQ) - are useful for trend analysis. The year-on-year (YoY) changes for various key series were computed and added to a <code>metrics_growth</code> table.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=6acf1f21">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">run_sql_file</span><span class="p">(</span><span class="n">SQL_DIR</span> <span class="o">/</span> <span class="s2">"derived"</span> <span class="o">/</span> <span class="s2">"create table - metrics_growth.sql"</span><span class="p">)</span>
+<span class="n">metrics_growth</span> <span class="o">=</span> <span class="n">run_sql</span><span class="p">(</span><span class="s2">"SELECT * FROM metrics_growth"</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">metrics_growth</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Ticker</th>
+<th>ReportDate</th>
+<th>RevenueGrowthYOY</th>
+<th>GrossProfitGrowthYOY</th>
+<th>OperatingIncomeGrowthYOY</th>
+<th>NetIncomeGrowthYOY</th>
+<th>TotalAssetsGrowthYOY</th>
+<th>TotalLiabilitiesGrowthYOY</th>
+<th>CashAndEquivGrowthYOY</th>
+<th>NetCashFromOperatingActivitiesYOY</th>
+<th>NetCashFromInvestingActivitiesYOY</th>
+<th>NetCashFromFinancingActivitiesYOY</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>16892</th>
+<td>ZYXI</td>
+<td>2020-12-31</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+</tr>
+<tr>
+<th>16893</th>
+<td>ZYXI</td>
+<td>2021-12-31</td>
+<td>-0.8998</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>0.8465</td>
+<td>2.8740</td>
+<td>0.0878</td>
+<td>7.4951</td>
+<td>15.8589</td>
+<td>-0.4824</td>
+</tr>
+<tr>
+<th>16894</th>
+<td>ZYXI</td>
+<td>2022-12-31</td>
+<td>18.6921</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>-0.1261</td>
+<td>-0.1557</td>
+<td>-0.5273</td>
+<td>0.9781</td>
+<td>-0.9748</td>
+<td>-3.7334</td>
+</tr>
+<tr>
+<th>16895</th>
+<td>ZYXI</td>
+<td>2023-12-31</td>
+<td>0.1654</td>
+<td>None</td>
+<td>-0.5300</td>
+<td>-0.4291</td>
+<td>0.1755</td>
+<td>0.8116</td>
+<td>1.2130</td>
+<td>0.2917</td>
+<td>1.3110</td>
+<td>-1.2136</td>
+</tr>
+<tr>
+<th>16896</th>
+<td>ZYXI</td>
+<td>2024-12-31</td>
+<td>0.0436</td>
+<td>1.4388</td>
+<td>-0.4443</td>
+<td>-0.6924</td>
+<td>-0.1083</td>
+<td>-0.0485</td>
+<td>-0.1110</td>
+<td>-0.2836</td>
+<td>-0.4017</td>
+<td>-3.2356</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c2527eba">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Profitability-Ratios">Profitability Ratios<a class="anchor-link" href="#Profitability-Ratios">¶</a></h2><p>Profitability ratios measure a company’s ability to convert revenue and assets into profit. They reveal the strength of the firm’s core business model and its capacity to generate returns for shareholders. Metrics like gross margin, operating margin, net margin, ROA, and ROE help distinguish companies that merely grow revenue from those that grow value. These ratios also highlight competitive advantages, pricing power, cost discipline, and long‑term sustainability. In downstream analysis, profitability ratios often serve as leading indicators of strategic success and capital allocation effectiveness.</p>
+<p>The profitability ratios will include:</p>
+<ul>
+<li>Calculate:</li>
+<li>EffectiveTaxRate</li>
+<li>EnterpriseValue</li>
+<li>GrossMargin</li>
+<li>OperatingMargin</li>
+<li>ProfitMargin</li>
+<li>ROA</li>
+<li>ROE</li>
+<li>ROIC</li>
+<li>EBITToEV</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=fb092a5b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">run_sql_file</span><span class="p">(</span><span class="n">SQL_DIR</span> <span class="o">/</span> <span class="s2">"derived"</span> <span class="o">/</span> <span class="s2">"create table - metrics_profitability_annual.sql"</span><span class="p">)</span>
+<span class="n">metrics_profitability_annual</span> <span class="o">=</span> <span class="n">run_sql</span><span class="p">(</span><span class="s2">"SELECT * FROM metrics_profitability_annual"</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">metrics_profitability_annual</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Ticker</th>
+<th>ReportDate</th>
+<th>EffectiveTaxRate</th>
+<th>EnterpriseValue</th>
+<th>GrossMargin</th>
+<th>OperatingMargin</th>
+<th>ProfitMargin</th>
+<th>ROA</th>
+<th>ROE</th>
+<th>ROIC</th>
+<th>EBITToEV</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>16892</th>
+<td>ZYXI</td>
+<td>2020-12-31</td>
+<td>0.1932</td>
+<td>None</td>
+<td>0.7826</td>
+<td>0.1279</td>
+<td>0.1133</td>
+<td>None</td>
+<td>None</td>
+<td>-39172999.85456677</td>
+<td>None</td>
+</tr>
+<tr>
+<th>16893</th>
+<td>ZYXI</td>
+<td>2021-12-31</td>
+<td>None</td>
+<td>None</td>
+<td>0.8677</td>
+<td>-0.5964</td>
+<td>-0.8389</td>
+<td>-0.0934</td>
+<td>-0.1185</td>
+<td>None</td>
+<td>None</td>
+</tr>
+<tr>
+<th>16894</th>
+<td>ZYXI</td>
+<td>2022-12-31</td>
+<td>0.2329</td>
+<td>None</td>
+<td>0.7977</td>
+<td>0.1450</td>
+<td>0.1078</td>
+<td>0.1279</td>
+<td>0.2306</td>
+<td>-9517999.73484959</td>
+<td>None</td>
+</tr>
+<tr>
+<th>16895</th>
+<td>ZYXI</td>
+<td>2023-12-31</td>
+<td>0.3708</td>
+<td>None</td>
+<td>0.7919</td>
+<td>0.0585</td>
+<td>0.0528</td>
+<td>0.0836</td>
+<td>0.1467</td>
+<td>13026000.14704109</td>
+<td>None</td>
+</tr>
+<tr>
+<th>16896</th>
+<td>ZYXI</td>
+<td>2024-12-31</td>
+<td>None</td>
+<td>None</td>
+<td>0.7950</td>
+<td>0.0311</td>
+<td>0.0156</td>
+<td>0.0219</td>
+<td>0.0649</td>
+<td>None</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cda87d93">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>And quarterly ratios:</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d648489c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [24]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">metrics_profitability_quarterly</span> <span class="o">=</span> <span class="n">run_sql_file</span><span class="p">(</span><span class="n">SQL_DIR</span> <span class="o">/</span> <span class="s2">"derived"</span> <span class="o">/</span> <span class="s2">"create table - metrics_profitability_quarterly.sql"</span><span class="p">)</span>
+<span class="n">metrics_profitability_quarterly</span> <span class="o">=</span> <span class="n">run_sql</span><span class="p">(</span><span class="s2">"SELECT * FROM metrics_profitability_quarterly"</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">metrics_profitability_quarterly</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Ticker</th>
+<th>ReportDate</th>
+<th>EffectiveTaxRate</th>
+<th>EnterpriseValue</th>
+<th>GrossMargin</th>
+<th>OperatingMargin</th>
+<th>ProfitMargin</th>
+<th>ROA</th>
+<th>ROE</th>
+<th>ROIC</th>
+<th>EBITToEV</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>47640</th>
+<td>ZYXI</td>
+<td>2024-03-31</td>
+<td>0.2308</td>
+<td>None</td>
+<td>0.8002</td>
+<td>0.0113</td>
+<td>0.0002</td>
+<td>None</td>
+<td>None</td>
+<td>0.00695351</td>
+<td>None</td>
+</tr>
+<tr>
+<th>47641</th>
+<td>ZYXI</td>
+<td>2024-06-30</td>
+<td>0.2464</td>
+<td>None</td>
+<td>0.8001</td>
+<td>0.0446</td>
+<td>0.0244</td>
+<td>None</td>
+<td>None</td>
+<td>0.02795802</td>
+<td>None</td>
+</tr>
+<tr>
+<th>47642</th>
+<td>ZYXI</td>
+<td>2024-09-30</td>
+<td>0.2502</td>
+<td>None</td>
+<td>0.7963</td>
+<td>0.0761</td>
+<td>0.0477</td>
+<td>None</td>
+<td>None</td>
+<td>0.05048620</td>
+<td>None</td>
+</tr>
+<tr>
+<th>47643</th>
+<td>ZYXI</td>
+<td>2024-12-31</td>
+<td>None</td>
+<td>None</td>
+<td>0.7829</td>
+<td>-0.0122</td>
+<td>-0.0134</td>
+<td>-0.0085</td>
+<td>-0.0108</td>
+<td>None</td>
+<td>None</td>
+</tr>
+<tr>
+<th>47644</th>
+<td>ZYXI</td>
+<td>2025-03-31</td>
+<td>None</td>
+<td>None</td>
+<td>0.6851</td>
+<td>-0.4928</td>
+<td>-0.3912</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=faa034e7">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Efficiency-(Activity)-Ratios">Efficiency (Activity) Ratios<a class="anchor-link" href="#Efficiency-(Activity)-Ratios">¶</a></h2><p>Efficiency ratios assess how effectively a company uses its assets and manages its operations. They highlight the speed and productivity with which resources are converted into revenue. Ratios such as asset turnover, inventory turnover, receivables turnover, and payables turnover illuminate operational discipline, supply‑chain management, and customer‑collection performance. These metrics often uncover bottlenecks or strengths that profitability ratios alone cannot reveal. Efficiency ratios are especially valuable for operational benchmarking and optimization.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e68f60b6">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [25]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">run_sql_file</span><span class="p">(</span><span class="n">SQL_DIR</span> <span class="o">/</span> <span class="s2">"derived"</span> <span class="o">/</span> <span class="s2">"create table - metrics_activity.sql"</span><span class="p">)</span>
+<span class="n">metrics_activity</span> <span class="o">=</span> <span class="n">run_sql</span><span class="p">(</span><span class="s2">"SELECT * FROM metrics_activity"</span><span class="p">)</span>
+<span class="n">metrics_activity</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[25]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Ticker</th>
+<th>ReportDate</th>
+<th>SalesTurnover</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>47640</th>
+<td>ZYXI</td>
+<td>2024-03-31</td>
+<td>0.3399</td>
+</tr>
+<tr>
+<th>47641</th>
+<td>ZYXI</td>
+<td>2024-06-30</td>
+<td>0.3952</td>
+</tr>
+<tr>
+<th>47642</th>
+<td>ZYXI</td>
+<td>2024-09-30</td>
+<td>0.4098</td>
+</tr>
+<tr>
+<th>47643</th>
+<td>ZYXI</td>
+<td>2024-12-31</td>
+<td>0.3647</td>
+</tr>
+<tr>
+<th>47644</th>
+<td>ZYXI</td>
+<td>2025-03-31</td>
+<td>0.2177</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=aea3a4e9">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Valuation-Ratios">Valuation Ratios<a class="anchor-link" href="#Valuation-Ratios">¶</a></h2><p>Valuation ratios connect fundamentals to market expectations. They measure how investors price a company relative to its earnings, cash flow, book value, or sales. Ratios like P/E, P/B, P/S, and EV/EBITDA help determine whether a stock appears undervalued, fairly valued, or overvalued. These metrics reflect sentiment, growth expectations, and perceived risk. In downstream analysis, valuation ratios bridge the gap between internal performance and external market behavior, enabling more informed investment decisions.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=ba5f0449">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">run_sql_file</span><span class="p">(</span><span class="n">SQL_DIR</span> <span class="o">/</span> <span class="s2">"derived"</span> <span class="o">/</span> <span class="s2">"create table - metrics_value.sql"</span><span class="p">)</span>
+<span class="n">metrics_value</span> <span class="o">=</span> <span class="n">run_sql</span><span class="p">(</span><span class="s2">"SELECT * FROM metrics_value"</span><span class="p">)</span>
+<span class="n">metrics_value</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[26]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Ticker</th>
+<th>ReportDate</th>
+<th>PriceDate</th>
+<th>PE</th>
+<th>PS</th>
+<th>PB</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>47640</th>
+<td>ZUO</td>
+<td>2021-04-30</td>
+<td>2021-04-29</td>
+<td>None</td>
+<td>24.47353758</td>
+<td>11.46270881</td>
+</tr>
+<tr>
+<th>47641</th>
+<td>ZYME</td>
+<td>2020-12-31</td>
+<td>2020-12-30</td>
+<td>None</td>
+<td>154.33392434</td>
+<td>5.90574109</td>
+</tr>
+<tr>
+<th>47642</th>
+<td>ZYNE</td>
+<td>2020-12-31</td>
+<td>2020-12-30</td>
+<td>None</td>
+<td>None</td>
+<td>1.61032348</td>
+</tr>
+<tr>
+<th>47643</th>
+<td>ZYNE</td>
+<td>2021-03-31</td>
+<td>2021-03-30</td>
+<td>None</td>
+<td>None</td>
+<td>1.94646189</td>
+</tr>
+<tr>
+<th>47644</th>
+<td>ZYNE</td>
+<td>2022-12-31</td>
+<td>2022-12-30</td>
+<td>None</td>
+<td>None</td>
+<td>0.50154594</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3f7bcb8e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Liquidity-Ratios">Liquidity Ratios<a class="anchor-link" href="#Liquidity-Ratios">¶</a></h2><p>Liquidity ratios evaluate a company’s ability to meet short‑term obligations using its most liquid assets. They answer a fundamental question: Can the company pay its bills without stress? Ratios such as the current ratio, quick ratio, and cash ratio help identify operational resilience and working‑capital efficiency. Strong liquidity supports stability during downturns, while weak liquidity can signal cash‑flow strain or reliance on external financing. These ratios are essential for risk assessment, especially in volatile industries or early‑stage companies.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=b8b67fd7">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [27]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">run_sql_file</span><span class="p">(</span><span class="n">SQL_DIR</span> <span class="o">/</span> <span class="s2">"derived"</span> <span class="o">/</span> <span class="s2">"create table - metrics_liquidity.sql"</span><span class="p">)</span>
+<span class="n">liquidity</span> <span class="o">=</span> <span class="n">run_sql</span><span class="p">(</span><span class="s2">"SELECT * FROM metrics_liquidity"</span><span class="p">)</span>
+<span class="n">liquidity</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[27]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Ticker</th>
+<th>ReportDate</th>
+<th>CashRatio</th>
+<th>QuickRatio</th>
+<th>CurrentRatio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>52415</th>
+<td>ZYXI</td>
+<td>2024-03-31</td>
+<td>1.510503</td>
+<td>2.679844</td>
+<td>3.584877</td>
+</tr>
+<tr>
+<th>52416</th>
+<td>ZYXI</td>
+<td>2024-06-30</td>
+<td>1.694045</td>
+<td>2.987718</td>
+<td>4.063768</td>
+</tr>
+<tr>
+<th>52417</th>
+<td>ZYXI</td>
+<td>2024-09-30</td>
+<td>1.894000</td>
+<td>2.982333</td>
+<td>3.943527</td>
+</tr>
+<tr>
+<th>52418</th>
+<td>ZYXI</td>
+<td>2024-12-31</td>
+<td>2.350036</td>
+<td>3.418703</td>
+<td>4.457958</td>
+</tr>
+<tr>
+<th>52419</th>
+<td>ZYXI</td>
+<td>2025-03-31</td>
+<td>1.461788</td>
+<td>2.323037</td>
+<td>3.457376</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=dd313fcf">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Solvency-Ratios">Solvency Ratios<a class="anchor-link" href="#Solvency-Ratios">¶</a></h2><p>Solvency ratios measure long‑term financial stability and the degree to which a company relies on debt to finance operations. Metrics like debt‑to‑equity, interest coverage, and debt‑to‑assets reveal leverage levels and the firm’s ability to service debt over time. High leverage can amplify returns but also magnify risk. Solvency ratios help analysts understand capital structure, creditworthiness, and exposure to macroeconomic conditions. They are critical for evaluating long‑term viability and strategic flexibility.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=dae4e87d">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [28]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">run_sql_file</span><span class="p">(</span><span class="n">SQL_DIR</span> <span class="o">/</span> <span class="s2">"derived"</span> <span class="o">/</span> <span class="s2">"create table - metrics_solvency.sql"</span><span class="p">)</span>
+<span class="n">metrics_solvency</span> <span class="o">=</span> <span class="n">run_sql</span><span class="p">(</span><span class="s2">"SELECT * FROM metrics_solvency"</span><span class="p">)</span>
+<span class="n">metrics_solvency</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[28]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Ticker</th>
+<th>ReportDate</th>
+<th>DebtToEquity</th>
+<th>DebtRatio</th>
+<th>InterestCoverageRatio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>47644</th>
+<td>ZUO</td>
+<td>2021-04-30</td>
+<td>0.4051</td>
+<td>0.5859</td>
+<td>None</td>
+</tr>
+<tr>
+<th>47645</th>
+<td>ZYME</td>
+<td>2020-12-31</td>
+<td>0.0211</td>
+<td>0.2388</td>
+<td>None</td>
+</tr>
+<tr>
+<th>47646</th>
+<td>ZYNE</td>
+<td>2020-12-31</td>
+<td>0.0000</td>
+<td>0.1879</td>
+<td>None</td>
+</tr>
+<tr>
+<th>47647</th>
+<td>ZYNE</td>
+<td>2021-03-31</td>
+<td>0.0000</td>
+<td>0.1203</td>
+<td>None</td>
+</tr>
+<tr>
+<th>47648</th>
+<td>ZYNE</td>
+<td>2022-12-31</td>
+<td>0.0000</td>
+<td>0.1674</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=35d5b71d">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Cash-Flow-Quality-Ratios">Cash Flow Quality Ratios<a class="anchor-link" href="#Cash-Flow-Quality-Ratios">¶</a></h2><p>Cash flow quality reflects how reliably a company turns its accounting earnings into actual cash, offering a deeper look into the sustainability of its operations beyond reported profit figures; metrics such as Earnings Quality, FCF Margin, and FCF Conversion reveal whether earnings are supported by cash generation or distorted by accruals, capital intensity, or working‑capital swings, and across the companies shown, ZUO demonstrates weak cash flow quality with negative earnings support and limited free‑cash generation, ZYME shows unusually strong earnings quality but poor FCF margin - often a sign of heavy investment or non‑recurring cash movements - and ZYNE consistently converts earnings into cash effectively despite missing FCF margin data, suggesting disciplined cash management; overall, cash flow quality acts as a critical lens for distinguishing durable performance from accounting noise, identifying firms capable of self‑funding growth, and assessing resilience when paired with profitability, efficiency, liquidity, and solvency ratios.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d78a1976">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [29]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">run_sql_file</span><span class="p">(</span><span class="n">SQL_DIR</span> <span class="o">/</span> <span class="s2">"derived"</span> <span class="o">/</span> <span class="s2">"create table - metrics_earnings_quality.sql"</span><span class="p">)</span>
+<span class="n">metrics_earnings_quality</span> <span class="o">=</span> <span class="n">run_sql</span><span class="p">(</span><span class="s2">"SELECT * FROM metrics_earnings_quality"</span><span class="p">)</span>
+<span class="n">metrics_earnings_quality</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[29]:</div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>Ticker</th>
+<th>ReportDate</th>
+<th>EarningsQuality</th>
+<th>FCFMargin</th>
+<th>FCFConversion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>47642</th>
+<td>ZUO</td>
+<td>2021-04-30</td>
+<td>-0.5804</td>
+<td>0.1032</td>
+<td>-0.4692</td>
+</tr>
+<tr>
+<th>47643</th>
+<td>ZYME</td>
+<td>2020-12-31</td>
+<td>1.2642</td>
+<td>-3.1242</td>
+<td>1.2912</td>
+</tr>
+<tr>
+<th>47644</th>
+<td>ZYNE</td>
+<td>2020-12-31</td>
+<td>0.7264</td>
+<td>None</td>
+<td>0.7329</td>
+</tr>
+<tr>
+<th>47645</th>
+<td>ZYNE</td>
+<td>2021-03-31</td>
+<td>1.0416</td>
+<td>None</td>
+<td>1.0416</td>
+</tr>
+<tr>
+<th>47646</th>
+<td>ZYNE</td>
+<td>2022-12-31</td>
+<td>0.7093</td>
+<td>None</td>
+<td>0.7102</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=950ef501">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">¶</a></h1><p>By converting raw fundamentals into a structured suite of ratios, this project creates a powerful analytical engine for understanding corporate performance. Each ratio group provides a different lens - profitability shows value creation, liquidity shows short‑term stability, solvency shows long‑term risk, efficiency shows operational execution, and valuation shows market perception. Together, they form a holistic framework that supports modeling, screening, forecasting, and strategic insights. This ratio‑driven foundation ensures that downstream analysis is not only data‑rich but also economically meaningful.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c8d41649">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Further-Ideas">Further Ideas<a class="anchor-link" href="#Further-Ideas">¶</a></h1><p>The data output from this project are informative and set the stage for further analysis. However, there are additional improvements that could be made to improve the efficiency of the data acquisition, processing, and output quality. They include:</p>
+<ol>
+<li>Fetching the raw data from SimFin via its native API. This could involve automated download, unzipping, and folder cleanup.</li>
+<li>Handling outlier values. For example, the stock prices contained extreme, probably incorrect data values. These could be deleted to ensure they do not affect subsequent calculations.</li>
+<li>Handling financial report restatements. Occasionally, financial report restatements occur and the date of the restatement should become the effective date of the reported financial figures.</li>
+</ol>
 </div>
 </div>
 </div>
