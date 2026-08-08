@@ -18,6 +18,9 @@ body {
   margin: 0;
 }
 
+.jp-RenderedHTMLCommon a:link {
+  color: rgb(55, 211, 190) !important;
+}
 .jp-Notebook {
   padding: 0;
   margin: 0;
