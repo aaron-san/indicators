@@ -8074,6 +8074,22 @@ window.addEventListener('load', () => {
 </div>
 </div>
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=095f0568">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># HideCell</span>
+<span class="c1"># GITHUB_PATH = "https://github.com/aaron-san/fundamentals-db-simfin-mysql"</span>
+<span class="c1"># GITHUB_PATH = "https://github.com/aaron-san/fundamentals-db-simfin-mysql/tree/main/sql/raw"</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=fcf18fb9">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -8092,7 +8108,8 @@ window.addEventListener('load', () => {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="The-Data">The Data<a class="anchor-link" href="#The-Data">¶</a></h1><p>The raw data was acquired from <a href="https://www.simfin.com/en/fundamental-data-download/">SimFin.com</a>, which requires a free account to download. MySQL was used as the database management system. The raw data existed as CSVs. Each CSV was loaded into a MySQL table. The code used to load each table can be found <a href="./sql/raw">here</a>.</p>
+<h1 id="The-Data">The Data<a class="anchor-link" href="#The-Data">¶</a></h1><p>The raw data was acquired from <a href="https://www.simfin.com/en/fundamental-data-download/">SimFin.com</a>, which requires a free account to download. The free account limits data downloads to dates up to the previous year.</p>
+<p>The raw CSV files were downloaded and each CSV was loaded into a MySQL table. The SQL code used to load each table can be seen in the <a href="https://github.com/aaron-san/fundamentals-db-simfin-mysql/tree/main/sql/raw">Github</a> repository.</p>
 </div>
 </div>
 </div>
@@ -8255,17 +8272,6 @@ window.addEventListener('load', () => {
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=61ce59fc">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Next, each SimFin CSV file was uploaded into a separate SQL database table. The SQL example below (press <code>Show SQL</code> to see) shows how the table <code>us_companies</code> was uploaded to the MySQL database titled 'fundamentals_data'. All SimFin data files were uploaded similarly.</p>
-</div>
-</div>
-</div>
-</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a0a343e6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -8393,7 +8399,7 @@ window.addEventListener('load', () => {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [35]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="s2">"""</span>
@@ -8472,7 +8478,7 @@ window.addEventListener('load', () => {
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[35]:</div>
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
 <div>
 <style scoped="">
